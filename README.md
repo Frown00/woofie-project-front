@@ -37,6 +37,20 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+
+## Documentation
+
+Using React Styleguidist (https://react-styleguidist.js.org/)
+
+### npm install --save-dev react-styleguidist
+Install react-styleguidist
+
+### `npx styleguidist server`
+start a style guide dev server
+
+### `npx styleguidist build`
+build a production HTML version
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
