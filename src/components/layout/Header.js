@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+
+import CSSModules from 'react-css-modules';
+import styles from './Header.module.scss';
+
+import websiteLogo from '../../img/woofie_logo.png';
 
 /**
  * General component description in JSDoc format. Markdown is *supported*.
  */
-export default class Header extends Component {
+class Header extends Component {
   static propTypes = {
     /** Description of prop "foo". */
     foo: PropTypes.number,
@@ -16,11 +21,22 @@ export default class Header extends Component {
     foo: 42
   }
 
+
+
   render() {
     return (
       <header>
-        Header
+        <div styleName="header">
+          <div styleName="header__background"></div>
+
+          <img styleName="header__logo" src={websiteLogo} alt="logo" />
+
+
+        </div>
       </header>
     )
   }
 }
+
+
+export default CSSModules(Header, styles);
