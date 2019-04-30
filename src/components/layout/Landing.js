@@ -39,7 +39,6 @@ class Landing extends Component {
         <div styleName="panel__content">
           <NoticeList />
         </div>
-        <Navbar navLinks={navLinkList} />
       </div>
     )
   }

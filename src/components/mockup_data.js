@@ -127,7 +127,6 @@ export const notices = [
 ];
 
 
-
 export const messages = [
   {
     destination: "#",
@@ -157,4 +156,10 @@ export const contacts = [
     }
   },
 
-]
+];
+
+export const userNotices = [
+  {
+    destination: "#"
+  }
+];

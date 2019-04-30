@@ -1,4 +1,9 @@
+@import "./components//common_styles//variables/sizes.scss";
+
 .app {
     background: red;
 }
 
+.content {
+    height: calc(100vh - #{$navbar-height});
+}

@@ -45,12 +45,15 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Header />
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route path="/communicator" component={MessagesPage} />
-            <Route path="/notices" component={NoticesPage} />
+          <div styleName="content">
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route path="/communicator" component={MessagesPage} />
+              <Route path="/notices" component={NoticesPage} />
 
-          </Switch>
+            </Switch>
+          </div>
+
           <Navbar navLinks={navLinkList} />
 
         </Router>
