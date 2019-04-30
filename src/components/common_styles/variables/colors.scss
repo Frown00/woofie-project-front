@@ -1,13 +1,26 @@
 // SPLIT COMPLEMENTARY SITE COLORS
 // primary
-$blue-normal: #aed9fa;
-$blue-dark: #9cc3e1;
-$blue-bright: #b6dcfa;
+$blue-normal: #0986E6;
+$blue-dark: #076bb8;
+$blue-bright: #3a9eeb;
 // secondary
-$yellow-normal: #faf5ae;
-$yellow-dark:#e1dd9c;
-$yellow-bright: #faf6b6;
+$yellow-normal: #e6d809;
+$yellow-dark:#b8ac07;
+$yellow-bright: #ebdf3a;
 // tertiary
-$red-normal: #faaeb3;
-$red-dark: #e19c9f;
-$red-bright: #fab6ba;
+$red-normal: #e60919;
+$red-dark: #b80714;
+$red-bright: #eb3a47;
+
+
+// Line selector
+$line-selector: #BFBFBF;
+
+// buttons
+$button-primary: $blue-normal;
+$button-primary-hover: $blue-dark;
+
+$button-secondary: $blue-bright;
+$button-submit: $blue-normal;
+$navbar-button-primary: $yellow-normal;
+$navbar-button-secondary: $yellow-bright;

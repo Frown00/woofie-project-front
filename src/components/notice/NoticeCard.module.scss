@@ -1,0 +1,113 @@
+@import "../common_styles/variables/colors.scss";
+
+.notice {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: whitesmoke;
+  color: black;
+  font-size: 10px;
+  box-shadow: 5px 10px 10px 0px rgba(224,224,224,1);
+  &__button-submit {
+    position: absolute;
+    right: 0.5em;
+    top: 1em;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 15px;
+  }
+}
+
+.notice__owner {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  &__paragraph {
+    margin: 0;
+    font-size: 10px;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+.notice__info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  background: rgba(0,0,0, 0.4);
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  padding: 10px;
+  left: 0;
+  color: white;
+
+  &__animal {
+    flex-basis: 100px;
+    &__name {
+      margin: 0;
+    }
+
+    &__specie {
+      margin-top: 10px;
+    }
+
+    &__breed {
+      margin: 0;
+
+    }
+  }
+
+  &__keeping {
+    flex-basis: 100px;
+    &__title {
+      margin: 0;
+    }
+
+    &__date-from {
+      margin-top: 10px;
+    }
+
+    &__date-to {
+      margin-top: 10px;
+    }
+  }
+
+  &__location {
+    flex-basis: 100px;
+    &__title {
+      margin: 0;
+    }
+
+    &__city {
+      margin-top: 10px;
+    }
+
+    &__street {
+      margin-top: 10px;
+    }
+  }
+
+  &__reward {
+    flex-basis: 100px;
+    
+    &__title {
+      margin: 0;
+      text-align: center;
+    }
+    &__amount {
+      font-size: 16px;
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+}
+

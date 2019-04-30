@@ -1,0 +1,26 @@
+.subnavbar {
+  display: flex;
+  flex-grow: 1;
+  margin-top: 30px;
+  padding: 0;
+  justify-content: center;
+  list-style-type: none;
+  a {
+    text-decoration: none;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    padding: 10px;
+    margin: 0 10px 0 0;
+    border-radius: 20px;
+    color: #333;
+    font-weight: 100;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
