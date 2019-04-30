@@ -31,11 +31,11 @@ export default class NoticesPage extends Component {
           component={AddNoticeForm}
         />
         <Route
-          path={`${this.props.match.url}/messages`}
+          path={`${this.props.match.url}/add`}
           component={AddNoticeForm}
         />
         <Route
-          path={`${this.props.match.url}/contacts`}
+          path={`${this.props.match.url}/published`}
           component={UserNotices}
         />
       </div>
