@@ -10,8 +10,34 @@ import styles from './App.module.scss';
 import store from './store';
 
 import Header from './components/layout/Header';
+import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
+import messagesIcon from './img/icons/messeges.png';
+import noticeIcon from './img/icons/notice.png';
+import accountIcon from './img/icons/account.png';
+
 import MessagesPage from './components/messages/MessagesPage';
+import NoticesPage from './components/notice/NoticesPage';
+
+
+
+const navLinkList = [
+  {
+    to: "/communicator",
+    icon: messagesIcon,
+    text: "Wiadomości"
+  },
+  {
+    to: "/notices",
+    icon: noticeIcon,
+    text: "Dodaj ogłoszenie"
+  },
+  {
+    to: "/account",
+    icon: accountIcon,
+    text: "Konto"
+  }
+];
 
 class App extends Component {
   render() {
@@ -22,8 +48,10 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route path="/communicator" component={MessagesPage} />
+            <Route path="/notices" component={NoticesPage} />
 
           </Switch>
+          <Navbar navLinks={navLinkList} />
 
         </Router>
       </Provider>

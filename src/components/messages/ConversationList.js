@@ -2,16 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Person from './Person';
 
-export default function ConversationList(props) {
+import CSSModules from 'react-css-modules';
+import styles from './ConversationList.module.scss';
+
+function ConversationList(props) {
 
   const conversationList =
-    <ul>
+    <ul styleName="conversation-list">
       {
-        props.conversations.map((conversationList, key) => {
+        props.conversations.map((conversation, key) => {
           return (
-            <Link to="#" key={key}>
+            <Link to="#" key={key} styleName="conversation-list__item">
               <li>
-                <Person person={conversationList.person} />
+                <Person conversation={conversation} />
               </li>
             </Link>
           )
@@ -25,3 +28,5 @@ export default function ConversationList(props) {
     </div>
   )
 }
+
+export default CSSModules(ConversationList, styles);

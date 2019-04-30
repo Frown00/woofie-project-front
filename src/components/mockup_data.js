@@ -131,15 +131,15 @@ export const notices = [
 export const messages = [
   {
     destination: "#",
-    notRead: 5,
+    unread: 5,
     person: {
-      name: "Małgorzata Nowak",
+      name: "Małgorzata Konewka",
       image: person1,
     }
   },
   {
     destination: "#",
-    notRead: 5,
+    unread: 5,
     person: {
       name: "Janusz Kowalski",
       image: person2,
@@ -150,9 +150,9 @@ export const messages = [
 export const contacts = [
   {
     destination: "#",
-    notRead: 5,
+    unread: 5,
     person: {
-      name: "Małgorzata Nowak",
+      name: "Małgorzata Konewka",
       image: person1,
     }
   },

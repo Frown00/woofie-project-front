@@ -19,7 +19,7 @@ const navLinkList = [
     text: "Wiadomości"
   },
   {
-    to: "/announcements/add",
+    to: "/notices",
     icon: noticeIcon,
     text: "Dodaj ogłoszenie"
   },
