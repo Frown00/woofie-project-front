@@ -12,11 +12,11 @@ function SubNavbar(props) {
   const url = props.match.url ? props.match.url : '';
   console.log(url);
   const navbarLinks =
-    props.links.map(link => {
+    props.links.map((link, key) => {
       i++;
       itemClass = i % 2 === 0 ? itemsClasses[1] : itemsClasses[0];
       return (
-        <Link to={url + link.to} styleName="subnavbar__item" className={itemClass}>
+        <Link to={url + link.to} styleName="subnavbar__item" className={itemClass} key={key}>
           <li>
             {link.title}
           </li>

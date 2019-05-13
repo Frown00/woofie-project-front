@@ -18,6 +18,7 @@ import accountIcon from './img/icons/account.png';
 
 import MessagesPage from './components/messages/MessagesPage';
 import NoticesPage from './components/notice/NoticesPage';
+import ProfilePage from './components/profile/ProfilePage';
 
 
 
@@ -50,6 +51,7 @@ class App extends Component {
               <Route exact path="/" component={Landing} />
               <Route path="/communicator" component={MessagesPage} />
               <Route path="/notices" component={NoticesPage} />
+              <Route path="/account" component={ProfilePage} />
 
             </Switch>
           </div>

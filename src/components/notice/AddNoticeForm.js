@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules';
 import styles from './AddNoticeForm.module.scss';
+import CheckboxField from '../common/form/CheckboxField';
+import InputField from '../common/form/InputField';
+import MultipleSelectField from '../common/form/MultipleSelectField';
+import TextAreaField from '../common/form/TextareaField';
 
 class AddNoticeForm extends Component {
   constructor(props) {
@@ -11,10 +15,12 @@ class AddNoticeForm extends Component {
       dateTo: '',
       reward: '',
       animals: [],
-
+      remarks: ''
     }
     this.nextStep = this.nextStep.bind(this);
     this.reset = this.reset.bind(this);
+
+    this.onChangeValue = this.onChangeValue.bind(this);
   }
 
   reset() {
@@ -30,6 +36,13 @@ class AddNoticeForm extends Component {
     });
   }
 
+  onChangeValue(e) {
+    console.log(e.target.value);
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
   render() {
 
     let form = <h3>Loading</h3>
@@ -38,29 +51,14 @@ class AddNoticeForm extends Component {
       case 1:
         form = (
           <div styleName="form">
-            <div styleName="form__animal">
-              <select styleName="form__animal__select">
-                <option>
-                  Pimpek
-              </option>
-                <option>
-                  Azor
-              </option>
-                <option>
-                  Misiek
-              </option>
-              </select>
-              <div
-                className="button"
-                styleName="form__animal__add">
-                +
-              </div>
-
-            </div>
-            <div styleName="form__animal-list">
-              Lista
-            </div>
-            <textarea placeholder="Dodatkowe uwagi" />
+            <MultipleSelectField />
+            <TextAreaField
+              minRows={3}
+              maxRows={10}
+              rows={3}
+              name="remarks"
+              placeholder="Dodatkowe uwagi"
+              onChange={this.onChangeValue} />
             <div
               styleName="form__button"
               className="button button-primary"
@@ -74,17 +72,17 @@ class AddNoticeForm extends Component {
         form = (
           <div styleName="form">
             <div styleName="form__keeping">
-              <p styleName="form__keeping__title">Data opieki</p>
               <div styleName="form__keeping__date">
-                <input type="date" placeholder="Od" />
-                <input type="date" placeholder="Do" />
+                <InputField label="Data od" name="datetime-from" type="datetime-local" placeholder="Od" />
+                <InputField label="Data do" name="datetime-to" type="datetime-local" placeholder="Do" />
               </div>
             </div>
-            <div>
-              <input type="number" placeholder="Nagroda" />
-              <div>
-                <p>Do uzgodnienia</p>
-                <input type="checkbox" />
+            <div styleName="form__reward">
+              <div styleName="form__reward__input">
+                <InputField label="Nagroda" name="reward" type="number" />
+              </div>
+              <div styleName="form__reward__checkbox">
+                <CheckboxField label="Do uzgodnienia" />
               </div>
             </div>
             <div
@@ -100,11 +98,14 @@ class AddNoticeForm extends Component {
 
 
     return (
-      <div>
+      <div styleName="form-container">
         <h2>Dodaj ogłoszenie {`(${this.state.step}/2)`}</h2>
         <form>
           {form}
         </form>
+        <div styleName="empty-for-autoresize">
+
+        </div>
       </div>
     )
   }
