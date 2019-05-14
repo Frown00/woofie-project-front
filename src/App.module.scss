@@ -1,0 +1,15 @@
+@import "./components//common_styles//variables/sizes.scss";
+
+.app {
+    background: red;
+}
+
+.content {
+    height: calc(100vh - #{$navbar-height});
+    margin: 0 16px;
+}
+
+.navbar-dom-substitute {
+    height: $navbar-height;
+    width: 100%;
+}

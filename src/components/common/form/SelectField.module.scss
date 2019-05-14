@@ -1,0 +1,45 @@
+@import "../../common_styles/variables/colors.scss";
+
+.form__container {
+  position: relative;  
+  
+  &__select {
+    white-space: nowrap;
+    overflow: hidden;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    padding: 1rem;
+  }
+
+  &__select.active {
+    border-radius: 25px 25px 0 0;
+  }
+
+  &__options {
+    position: absolute;
+    top: 3rem;
+    visibility: hidden;
+    background: white;
+    border: 1px solid lightgray;
+    border-radius: 0px 0 25px 25px;
+    overflow:hidden;
+    width: 100%;
+    &__list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      &__item {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        cursor: pointer;
+        &:hover {
+          background: $yellow-normal;
+        }
+      }
+    }
+  }
+
+  &__options.active {
+    visibility: visible;
+  }
+}

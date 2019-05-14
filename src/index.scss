@@ -1,0 +1,66 @@
+@import "./components/common_styles/variables/colors.scss";
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+
+body {
+  font-size: 16px;
+  min-height: calc(100vh + 100px);
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-primary {
+  border-radius: 5px;
+  background: $button-primary;
+  color: white;
+
+  &:hover {
+    background: $button-primary-hover;
+  }
+}
+
+.button-secondary {
+  background: $button-secondary;
+  color: white;
+}
+
+.navbar__button-primary {
+  background: $navbar-button-primary;
+  color: white; 
+}
+
+.navbar__button-secondary {
+  background: $navbar-button-secondary;
+  color: white;
+} 
+
+.button-submit {
+  background: $button-submit;
+  color: white;
+}
