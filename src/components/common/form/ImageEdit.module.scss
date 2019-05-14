@@ -1,0 +1,38 @@
+@import '../../common_styles/variables/colors.scss';
+
+.form__container {
+  max-width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+    overflow: hidden;
+    
+  }
+  &__image-container__image {
+    height: 150px;
+
+  }
+
+  &__button-change {
+    color: white;
+    margin-left: 50px;
+    width: 150px;
+    height: 50px;
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    background: $change-image-button;
+
+    &:hover {
+      background: $change-image-button-hover;
+    }
+  }
+}

@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Route, Link, Redirect } from 'react-router-dom';
+
 import SubNavbar from '../common/SubNavbar';
-import NotificationList from './NotificationList';
 import RatingsPage from './RatingsPage';
+import ApplicationList from './ApplicationList';
+import EditProfile from './EditProfile';
+import PetsList from './PetsList';
 import { users, applications } from '../mockup_data';
 
 const subNavbarLinks = [
@@ -28,30 +31,26 @@ export default class ProfilePage extends Component {
     return (
       <div>
         <SubNavbar links={subNavbarLinks} match={this.props.match} />
-        <div>
-          <h2>Profil</h2>
-          <Link to={`${this.props.match.url}/profile/edit`}>Edytuj</Link>
-          <Link to={`${this.props.match.url}/profile/pets`}>Moje zwierzęta</Link>
-        </div>
+
         <Route
           exact path={`${this.props.match.url}`}
-          component={() => <NotificationList applicationSent={applications} />}
+          component={() => <ApplicationList match={this.props.match} applications={applications} />}
         />
         <Route
           path={`${this.props.match.url}/applications`}
-          component={NotificationList}
+          component={() => <ApplicationList match={this.props.match} applications={applications} />}
         />
         <Route
           path={`${this.props.match.url}/ratings`}
-          component={RatingsPage}
+          component={() => <RatingsPage match={this.props.match} profile={users[0]} />}
         />
         <Route
           path={`${this.props.match.url}/profile/edit`}
-          component={RatingsPage}
+          component={() => <EditProfile profile={users[0]} />}
         />
         <Route
           path={`${this.props.match.url}/profile/pets`}
-          component={RatingsPage}
+          component={() => <PetsList profile={users[0]} />}
         />
       </div>
     )

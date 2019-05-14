@@ -1,113 +1,159 @@
 @import "../common_styles/variables/colors.scss";
 
 .notice {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  background: whitesmoke;
-  color: black;
-  font-size: 10px;
+  margin-bottom: 70px;
+  border-radius: 10px;
+  border: 2px solid gray;
   box-shadow: 5px 10px 10px 0px rgba(224,224,224,1);
-  &__button-submit {
-    position: absolute;
-    right: 0.5em;
-    top: 1em;
-    width: 120px;
-    height: 40px;
-    font-size: 14px;
-    border-radius: 15px;
-  }
-}
+  overflow: hidden;
+} 
 
-.notice__owner {
-  position: absolute;
-  left: 1em;
-  top: 1em;
-  &__paragraph {
-    margin: 0;
-    font-size: 10px;
-  }
-
-  &__name {
-    margin: 0;
-    font-size: 12px;
-    font-weight: bold;
-  }
-}
-
-.notice__info {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  position: absolute;
-  background: rgba(0,0,0, 0.4);
-  width: 100%;
-  height: 100px;
-  bottom: 0;
-  padding: 10px;
-  left: 0;
-  color: white;
-
+.notice__who {
+  background: $yellow-normal;
+  padding: 5px 20px;
+  font-size: 0.8rem;
   &__animal {
-    flex-basis: 100px;
+    display: block;
     &__name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 500;
       margin: 0;
     }
 
-    &__specie {
-      margin-top: 10px;
-    }
-
-    &__breed {
-      margin: 0;
-
+    &__rating {
+      background: #333;
+      color: white;
+      border: 2px solid lightgray;
+      font-weight: 700;
+      padding: 0.1rem 0.7rem;
+      margin-left: 10px;
+      border-radius: 20px;
     }
   }
 
-  &__keeping {
-    flex-basis: 100px;
+  &__owner {
+    margin-top: 0.5rem;
     &__title {
+      color: black;
+      font-size: 0.7rem;
       margin: 0;
+      font-weight: 200;
     }
 
-    &__date-from {
-      margin-top: 10px;
+    &__name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      color: black;
+      font-weight: 700;
     }
-
-    &__date-to {
-      margin-top: 10px;
+    &__rating {
+      color: black;
+      background: whitesmoke;
+      border: 2px solid lightgray;
+      font-weight: 700;
+      padding: 0.1rem 0.7rem;
+      margin-left: 10px;
+      border-radius: 15px;
     }
   }
-
-  &__location {
-    flex-basis: 100px;
-    &__title {
-      margin: 0;
-    }
-
-    &__city {
-      margin-top: 10px;
-    }
-
-    &__street {
-      margin-top: 10px;
-    }
-  }
-
-  &__reward {
-    flex-basis: 100px;
-    
-    &__title {
-      margin: 0;
-      text-align: center;
-    }
-    &__amount {
-      font-size: 16px;
-      margin-top: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
-  }
-
 }
+
+.notice__details {
+  color: black;
+  font-size: 0.8rem;
+
+  &__image {
+    width: 300px;
+    height: 200px;
+    background: whitesmoke;
+  }
+
+  &__selector {
+    height: 1px;
+    border: 0;
+    background: #CFCFCF;
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    background: #EBEBEB;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    &__animal {
+      flex-basis: 100px;
+      &__name {
+        margin: 0;
+      }
+  
+      &__specie {
+        margin-top: 10px;
+      }
+  
+      &__breed {
+        margin: 0;
+  
+      }
+    }
+  
+    &__keeping {
+      display: flex;
+      &__title {
+        margin: 0;
+      }
+  
+      &__date-from {
+        margin-top: 10px;
+      }
+  
+      &__date-to {
+        margin-top: 10px;
+      }
+    }
+  
+    &__location {
+      display: flex;
+      &__title {
+        margin: 0;
+      }
+  
+      &__city {
+        margin-top: 10px;
+      }
+  
+      &__street {
+        margin-top: 10px;
+      }
+    }
+  
+    &__reward {
+      display: flex;      
+      &__title {
+        margin: 0;
+        text-align: center;
+      }
+      &__amount {
+        font-size: 16px;
+        margin-top: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+    &__button-submit {
+      width: 100%;
+      height: 40px;
+      font-size: 14px;
+      border-radius: 0;
+    }
+  }
+}
+
+
+
 

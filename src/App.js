@@ -54,8 +54,9 @@ class App extends Component {
               <Route path="/account" component={ProfilePage} />
 
             </Switch>
-          </div>
+            <div styleName="navbar-dom-substitute"></div>
 
+          </div>
           <Navbar navLinks={navLinkList} />
 
         </Router>

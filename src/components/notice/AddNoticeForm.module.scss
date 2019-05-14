@@ -3,13 +3,9 @@
   padding: 10px;
 }
 
-.empty-for-autoresize {
-  height: 100px;
-  width: 100%;
-}
 
 .form {
-  margin: 1em;
+  margin: 0;
   
   &__animal {
     display: flex;

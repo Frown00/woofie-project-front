@@ -273,8 +273,8 @@ export const users = [
     city: "Wrocław",
     street: "Warszawska",
     animals: null,
-    avatar: null,
+    avatar: person2,
     buildingNumber: "16",
-    birthDate: new Date("10.10.1987")
+    birthDate: "1987-10-10"
   }
 ];

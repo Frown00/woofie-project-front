@@ -103,9 +103,7 @@ class AddNoticeForm extends Component {
         <form>
           {form}
         </form>
-        <div styleName="empty-for-autoresize">
 
-        </div>
       </div>
     )
   }

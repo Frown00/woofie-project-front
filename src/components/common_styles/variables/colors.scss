@@ -16,6 +16,9 @@ $red-bright: #eb3a47;
 // Line selector
 $line-selector: #BFBFBF;
 
+$light-black: #444;
+$darker-black: #222;
+
 // buttons
 $button-primary: $blue-normal;
 $button-primary-hover: $blue-dark;
@@ -24,7 +27,11 @@ $button-secondary: $blue-bright;
 $button-submit: $blue-normal;
 $navbar-button-primary: $yellow-normal;
 $navbar-button-secondary: $yellow-bright;
+$pet-button: $light-black;
+$pet-button-hover: $darker-black;
 
+$change-image-button: $blue-normal;
+$change-image-button-hover: $blue-dark;
 
 // Font color
 $message-name: $yellow-bright;
