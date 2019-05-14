@@ -21,7 +21,6 @@ import NoticesPage from './components/notice/NoticesPage';
 import ProfilePage from './components/profile/ProfilePage';
 
 
-
 const navLinkList = [
   {
     to: "/communicator",
