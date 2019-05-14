@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/css/2.1de0b248.chunk.css"
   },
   {
-    "revision": "24111c22db2cd17acef1747ed38a744a",
+    "revision": "6acd5dfb5d550fbda0171de5d04f9922",
     "url": "/woofie-project-front/index.html"
   }
 ];
