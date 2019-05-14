@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/media/account.dbffcf77.png"
   },
   {
-    "revision": "f3d465387725a2e82a8c",
+    "revision": "484a2c69c997fc90db0a",
     "url": "/woofie-project-front/static/css/main.425695ac.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/media/pimpek.d6149367.jpg"
   },
   {
-    "revision": "f3d465387725a2e82a8c",
-    "url": "/woofie-project-front/static/js/main.96f345f5.chunk.js"
+    "revision": "484a2c69c997fc90db0a",
+    "url": "/woofie-project-front/static/js/main.ea6eef72.chunk.js"
   },
   {
     "revision": "19dc82578f842cca438f282e158013d3",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/css/2.1de0b248.chunk.css"
   },
   {
-    "revision": "6acd5dfb5d550fbda0171de5d04f9922",
+    "revision": "ce2ddde3a78fa06ee7eedad982730706",
     "url": "/woofie-project-front/index.html"
   }
 ];
