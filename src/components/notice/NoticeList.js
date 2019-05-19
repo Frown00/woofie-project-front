@@ -21,13 +21,13 @@ class NoticeList extends Component {
     });
   }
   render() {
-    console.log(this.state.notices);
+    console.log("ELO");
     const noticeList =
       <ul styleName="notice-list">
 
         {
-          this.state.notices.map((notice) =>
-            <li styleName="notice-list__item">
+          this.state.notices.map((notice, key) =>
+            <li styleName="notice-list__item" key={key}>
               <NoticeCard notice={notice} />
             </li>
           )

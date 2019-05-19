@@ -5,6 +5,7 @@ import 'moment/locale/pl'
 import CSSModules from 'react-css-modules';
 import styles from './NoticeCard.module.scss';
 import { formatDate, formatTime } from '../../utils/formatDatetime';
+import TimeLine from '../common/TimeLine';
 
 moment.locale('pl');
 function NoticeCard(props) {
@@ -56,24 +57,32 @@ function NoticeCard(props) {
           <div styleName="notice__details__info__location">
             <p styleName="notice__details__info__location__title">
               Miejsce:
-              <span styleName="notice__details__info__location__city">{notice.city}</span>
+              <span styleName="notice__details__info__location__city">{notice.city},</span>
               <span styleName="notice__details__info__location__street">ul.{notice.street}</span>
             </p>
           </div>
           <hr styleName="notice__details__selector" />
           <div styleName="notice__details__info__keeping">
             <div styleName="notice__details__info__keeping__date-from">
-              <p>{moment('2017-03-10').format('DD MMMM')} </p>
-              <p styleName="notice__details__info__keeping__date-to">{moment().format("1.1.2019")}</p>
+              <p styleName="date">{moment('2017-03-10').format('DD MMMM')}</p>
+              <p styleName="time">{moment('2017-03-10 10:00').format("dddd h:mm")}</p>
+            </div>
+            <div styleName="notice__details__info__keeping__timeline">
+              <TimeLine />
+            </div>
+            <div styleName="notice__details__info__keeping__date-to">
+              <p styleName="date">{moment('2017-03-10').format('DD MMMM')}</p>
+              <p styleName="time">{moment('2017-03-10 10:00').format("dddd h:mm")}</p>
             </div>
           </div>
           <hr styleName="notice__details__selector" />
           <div styleName="notice__details__info__reward">
             <p styleName="notice__details__info__reward__title">
-              Nagroda:
+              Wynagrodzenie:
             <span styleName="notice__details__info__reward__amount">{notice.reward}zł</span>
             </p>
           </div>
+          <div className="button" styleName="notice__details__info__more-info-button">Szczegóły</div>
         </div>
         <div
           className="button button-primary"

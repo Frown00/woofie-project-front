@@ -1,4 +1,5 @@
 {
+  "homepage": "https://frown00.github.io/woofie-project-front/",
   "name": "woofie",
   "version": "0.1.0",
   "private": true,
@@ -32,6 +33,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-styleguidist": "^9.0.5"
+    "react-styleguidist": "^9.0.5",
+    "redux-devtools": "^3.5.0"
   }
 }

@@ -28,7 +28,6 @@ class TextareaField extends Component {
 
   autoResize = (e) => {
     const textareaLineHeight = 16;
-    console.log(e.target.rows);
     const previousRows = e.target.rows;
     e.target.rows = this.state.minRows;
 
@@ -42,7 +41,6 @@ class TextareaField extends Component {
     if (currentRows >= this.state.maxRows) {
       e.target.rows = this.state.maxRows;
       e.target.scrollTop = e.target.scrollHeight;
-      console.log(e.target.scrollHeight);
     }
 
     // this.props.onChange(e.target.value);

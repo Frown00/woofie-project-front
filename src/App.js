@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import 'normalize.css';
@@ -52,7 +52,6 @@ class App extends Component {
               <Route path="/communicator" component={MessagesPage} />
               <Route path="/notices" component={NoticesPage} />
               <Route path="/account" component={ProfilePage} />
-
             </Switch>
             <div styleName="navbar-dom-substitute"></div>
 

@@ -5,6 +5,7 @@ import person2 from '../img/mockup_data/people/man1.jpg';
 
 export const notices = [
   {
+    id: '1234',
     publishDate: '10-10-2019 10:53:45',
     keepingDateFrom: '2019-10-10T13:24:00',
     keepingDateTo: '2019-10-15T23:24:00',
@@ -27,6 +28,7 @@ export const notices = [
     }
   },
   {
+    id: '1239',
     publishDate: '10-10-2019 10:53:45',
     keepingDateFrom: '2019-10-10T13:24:00',
     keepingDateTo: '2019-10-15T23:24:00',
@@ -49,6 +51,7 @@ export const notices = [
     }
   },
   {
+    id: '1400',
     publishDate: '10-10-2019 10:53:45',
     keepingDateFrom: '2019-10-10T13:24:00',
     keepingDateTo: '2019-10-15T23:24:00',
@@ -71,6 +74,7 @@ export const notices = [
     }
   },
   {
+    id: '1600',
     publishDate: '10-10-2019 10:53:45',
     keepingDateFrom: '2019-10-10T13:24:00',
     keepingDateTo: '2019-10-15T23:24:00',
@@ -93,6 +97,7 @@ export const notices = [
     }
   },
   {
+    id: '1650',
     publishDate: '10-10-2019 10:53:45',
     keepingDateFrom: '2019-10-10T13:24:00',
     keepingDateTo: '2019-10-15T23:24:00',
@@ -115,6 +120,7 @@ export const notices = [
     }
   },
   {
+    id: '1604',
     publishDate: '10-10-2019 10:53:45',
     keepingDateFrom: '2019-10-10T13:24:00',
     keepingDateTo: '2019-10-15T23:24:00',

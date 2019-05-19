@@ -26,23 +26,20 @@ class MultipleSelectField extends Component {
       this.setState({
         addedItems: items
       });
-      console.log(this.state.addedItems)
     }
     else {
-      console.log("Error");
+      // console.log("Error");
     }
   }
 
   removeFromList(e) {
     e.preventDefault();
-    console.log(e.currentTarget.parentNode.children[0].innerHTML);
     const optionToRemove = e.currentTarget.parentNode.children[0].innerHTML;
     let items = this.state.addedItems;
     items = items.filter(el => el !== optionToRemove);
     this.setState({
       addedItems: items
     });
-    console.log(this.state.addedItems)
   }
 
   changeSelectedValue(newVal) {

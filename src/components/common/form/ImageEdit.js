@@ -33,7 +33,6 @@ class ImageEdit extends Component {
   handleFileSelect = (e) => {
     e.preventDefault();
     this.fileSelector.click();
-    console.log(this.fileSelector);
     this.props.onChange();
   }
 

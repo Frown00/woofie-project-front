@@ -22,8 +22,8 @@ function Navbar(props) {
       <ul styleName="navbar">
         {
           props.navLinks.map((link, key) =>
-            <Link to={link.to}>
-              <li key={key} styleName="navbar__item" className="button">
+            <Link to={link.to} key={key}>
+              <li styleName="navbar__item" className="button">
                 <span styleName="navbar__item__content">
                   <img styleName="navbar__item__content__image"
                     src={link.icon}

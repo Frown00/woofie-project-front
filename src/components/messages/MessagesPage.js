@@ -23,7 +23,6 @@ export default class MessagesPage extends Component {
   }
 
   render() {
-    console.log(this.props.match.url);
     return (
       <div>
         <SubNavbar links={subNavbarLinks} match={this.props.match} />

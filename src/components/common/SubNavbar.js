@@ -10,7 +10,6 @@ function SubNavbar(props) {
   let i = 0;
   let itemClass;
   const url = props.match.url ? props.match.url : '';
-  console.log(url);
   const navbarLinks =
     props.links.map((link, key) => {
       i++;
