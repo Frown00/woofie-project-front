@@ -29,7 +29,7 @@ class Header extends Component {
         <div styleName="header">
           <div styleName="header__background"></div>
           <img styleName="header__hamburger" src={menuIcon} alt="" />
-          <Link to="/">
+          <Link to="/announcements">
             <img styleName="header__logo" src={websiteLogo} alt="logo" />
           </Link>
         </div>

@@ -12,7 +12,7 @@
   margin: 0;
   background: white;
   list-style-type: none;
-
+  z-index: 100;
   &:before {
     content : "";
     position: absolute;

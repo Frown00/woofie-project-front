@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Link, Route, withRouter } from 'react-router-dom';
 import moment from 'moment';
-import 'moment/locale/pl'
+import 'moment/locale/pl';
 
 import CSSModules from 'react-css-modules';
 import styles from './NoticeCard.module.scss';
-import { formatDate, formatTime } from '../../utils/formatDatetime';
 import TimeLine from '../common/TimeLine';
+import NoticeMoreInfo from '../notice/NoticeMoreInfo';
 
 moment.locale('pl');
 function NoticeCard(props) {
@@ -82,17 +83,19 @@ function NoticeCard(props) {
             <span styleName="notice__details__info__reward__amount">{notice.reward}zł</span>
             </p>
           </div>
-          <div className="button" styleName="notice__details__info__more-info-button">Szczegóły</div>
+          <Link to={`${props.match.url}/${props.notice.id}`}>
+            <div className="button" styleName="notice__details__info__more-info-button">Szczegóły</div>
+          </Link>
         </div>
         <div
           className="button button-primary"
           styleName="notice__details__info__button-submit">
           <span>Zgłoś się</span>
         </div>
-      </div>
 
+      </div>
     </div>
   )
 }
 
-export default CSSModules(NoticeCard, styles);
+export default withRouter(CSSModules(NoticeCard, styles));

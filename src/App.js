@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import 'normalize.css';
@@ -19,7 +19,8 @@ import accountIcon from './img/icons/account.png';
 import MessagesPage from './components/messages/MessagesPage';
 import NoticesPage from './components/notice/NoticesPage';
 import ProfilePage from './components/profile/ProfilePage';
-
+import NoticeMoreInfo from './components/notice/NoticeMoreInfo';
+import NoticeLandingPage from './components/notice-landing/NoticeLandingPage';
 
 
 const navLinkList = [
@@ -48,7 +49,10 @@ class App extends Component {
           <Header />
           <div styleName="content">
             <Switch>
-              <Route exact path="/" component={Landing} />
+              <Route exact path="/">
+                <Redirect to="/announcements" />
+              </Route>
+              <Route path="/announcements" component={NoticeLandingPage} />
               <Route path="/communicator" component={MessagesPage} />
               <Route path="/notices" component={NoticesPage} />
               <Route path="/account" component={ProfilePage} />

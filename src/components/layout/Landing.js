@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import NoticeList from '../notice/NoticeList';
 
@@ -10,7 +10,7 @@ import accountIcon from '../../img/icons/account.png';
 import CSSModules from 'react-css-modules';
 import styles from './Landing.module.scss';
 
-import { notices } from '../mockup_data';
+import NoticeMoreInfo from '../notice/NoticeMoreInfo';
 
 const navLinkList = [
   {
@@ -32,12 +32,16 @@ const navLinkList = [
 
 
 class Landing extends Component {
+
   render() {
     return (
       <div styleName="panel">
-        <div styleName="panel__filter-button" className="button button-secondary">Filtry</div>
+
         <div styleName="panel__content">
-          <NoticeList />
+          <Route
+            exact path={`${this.props.match.url}`}
+            component={() => <NoticeList match={this.props.match} />}
+          />
         </div>
       </div>
     )

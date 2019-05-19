@@ -20,6 +20,7 @@ function Navbar(props) {
 
     <nav>
       <ul styleName="navbar">
+
         {
           props.navLinks.map((link, key) =>
             <Link to={link.to} key={key}>

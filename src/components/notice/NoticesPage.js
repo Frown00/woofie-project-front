@@ -37,6 +37,7 @@ export default class NoticesPage extends Component {
           path={`${this.props.match.url}/published`}
           component={UserNotices}
         />
+
       </div>
     )
   }
