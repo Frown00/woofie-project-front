@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/media/account.dbffcf77.png"
   },
   {
-    "revision": "17607a82338d40eef38a",
-    "url": "/woofie-project-front/static/css/main.425695ac.chunk.css"
+    "revision": "d860a8fa640e3d3226ec",
+    "url": "/woofie-project-front/static/css/main.1370f273.chunk.css"
   },
   {
     "revision": "614e4c07753cc45a527a",
@@ -16,16 +16,16 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/media/default_avatar.12e65248.jpg"
   },
   {
-    "revision": "c0f1ed9a2bb97a544129",
-    "url": "/woofie-project-front/static/js/2.a0a80834.chunk.js"
+    "revision": "02308d9028e6fd022831",
+    "url": "/woofie-project-front/static/js/2.6ab6cd24.chunk.js"
   },
   {
     "revision": "d6149367db0fd1abc7fcddee185eb7b2",
     "url": "/woofie-project-front/static/media/pimpek.d6149367.jpg"
   },
   {
-    "revision": "17607a82338d40eef38a",
-    "url": "/woofie-project-front/static/js/main.695701d4.chunk.js"
+    "revision": "d860a8fa640e3d3226ec",
+    "url": "/woofie-project-front/static/js/main.106904be.chunk.js"
   },
   {
     "revision": "19dc82578f842cca438f282e158013d3",
@@ -40,11 +40,11 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/media/woofie_logo.06dfeedc.png"
   },
   {
-    "revision": "c0f1ed9a2bb97a544129",
+    "revision": "02308d9028e6fd022831",
     "url": "/woofie-project-front/static/css/2.1de0b248.chunk.css"
   },
   {
-    "revision": "ebbfbc549cbd44f1024d0634ccfd920a",
+    "revision": "dcd150b62b56d09ab5d0f2096a145e2b",
     "url": "/woofie-project-front/index.html"
   }
 ];
