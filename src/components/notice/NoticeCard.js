@@ -7,6 +7,7 @@ import CSSModules from 'react-css-modules';
 import styles from './NoticeCard.module.scss';
 import TimeLine from '../common/TimeLine';
 import NoticeMoreInfo from '../notice/NoticeMoreInfo';
+import Image from '../common/Image';
 
 moment.locale('pl');
 
@@ -59,8 +60,9 @@ function NoticeCard(props) {
 
       <div styleName="notice__details">
         <Link to={`${props.match.url}/${props.notice.id}`}>
-          <div styleName="notice__details__image" style={backgroundImage}></div>
+          <Image imageSrc={image} width={300} height={200} />
         </Link>
+
         <div styleName="notice__details__info">
 
           <div styleName="notice__details__info__location">

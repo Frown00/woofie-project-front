@@ -102,7 +102,7 @@ export const notices = [
     remarks: 'Lorem Lorem Ipsum Ipsum',
     owner: users[0],
     pets: [
-      users[0].pets[0],
+      users[0].pets[1],
     ]
   },
   {
@@ -133,7 +133,7 @@ export const notices = [
     remarks: 'Lorem Lorem Ipsum Ipsum',
     owner: users[0],
     pets: [
-      users[0].pets[0],
+      users[0].pets[1],
     ]
   },
 ];
@@ -207,14 +207,40 @@ export const contacts = [
 
 export const userNotices = [
   {
-    destination: "#"
-  }
+    id: 12334,
+    publishDate: '10-10-2019 10:53:45',
+    keepingDateFrom: '2019-10-10T13:24:00',
+    keepingDateTo: '2019-10-15T23:24:00',
+    reward: 200,
+    status: 'ACTIVE',
+    city: 'Wrocław',
+    street: 'Warszawska',
+    owner: users[0],
+    pet: [
+      pets[0]
+    ]
+  },
+  {
+    id: 12339,
+    publishDate: '10-10-2019 10:53:45',
+    keepingDateFrom: '2019-10-10T13:24:00',
+    keepingDateTo: '2019-10-15T23:24:00',
+    reward: 200,
+    status: 'ACTIVE',
+    city: 'Wrocław',
+    street: 'Warszawska',
+    owner: users[0],
+    pet: [
+      pets[0]
+    ]
+  },
+
 ];
 
 export const applicationsAccepted = [
   {
     status: 'ACCEPTED',
-    applicationDate: new Date('10.10.2019 10:55:00'),
+    applicationDate: '10.10.2019 10:55:00',
     responseDate: null,
     announcement: {
       publishDate: '10-10-2019 10:53:45',
@@ -224,25 +250,19 @@ export const applicationsAccepted = [
       status: 'Aktywny',
       city: 'Wrocław',
       street: 'Warszawska',
-      owner: {
-        name: 'Janusz Kowalski',
-        rating: 3.5,
-      },
-      pet: {
-        image: pet1,
-        name: 'Pimpek',
-        specie: 'Pies',
-        breed: 'York',
-        rating: 4.0
-      }
+      owner: users[0],
+      pet: [
+        pets[0]
+      ]
     }
   }
 ];
 
 export const applications = [
   {
+    id: '1233',
     status: 'PENDING',
-    applicationDate: new Date('10.10.2019 10:55:00'),
+    applicationDate: '10.10.2019 10:55:00',
     responseDate: null,
     announcement: {
       publishDate: '10-10-2019 10:53:45',
@@ -266,8 +286,9 @@ export const applications = [
     }
   },
   {
+    id: '123234',
     status: 'ACCEPTED',
-    applicationDate: new Date('10.10.2019 10:55:00'),
+    applicationDate: '10.10.2019 10:55:00',
     responseDate: null,
     announcement: {
       publishDate: '10-10-2019 10:53:45',

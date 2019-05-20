@@ -1,4 +1,6 @@
-.subnavbar {
+@import "../common_styles/variables/colors.scss";
+
+.profile-navbar {
   display: flex;
   flex-grow: 1;
   margin-top: 30px;
@@ -19,9 +21,15 @@
     color: rgb(0, 0, 0);
     font-weight: 400;
     font-size: 12px;
+    background: $subnavbar-button;
     cursor: pointer;
     &:last-of-type {
       margin: 0;
     }
+
+    
+  }
+  &__item.go-back {
+    background: $subnavbar-back;
   }
 }
