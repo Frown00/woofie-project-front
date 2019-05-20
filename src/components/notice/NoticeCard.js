@@ -9,13 +9,19 @@ import TimeLine from '../common/TimeLine';
 import NoticeMoreInfo from '../notice/NoticeMoreInfo';
 
 moment.locale('pl');
+
+function getPetNames(pets) {
+  return pets.map(pet => pet["name"]).join(", ");
+}
+
 function NoticeCard(props) {
 
   let backgroundImage;
   const notice = props.notice;
   const owner = props.notice.owner;
-  const animal = props.notice.animal;
-  const image = props.notice.animal.image;
+  const petNames = getPetNames(props.notice.pets);
+  console.log(petNames);
+  const image = props.notice.pets[0].image;
   if (image) {
     backgroundImage = {
       backgroundImage: `url(${image}`,
@@ -35,10 +41,10 @@ function NoticeCard(props) {
   return (
     <div styleName="notice">
       <div styleName="notice__who">
-        <div styleName="notice__who__animal">
-          <p styleName="notice__who__animal__name">
-            {animal.name}
-            <span styleName="notice__who__animal__rating">3.5</span>
+        <div styleName="notice__who__pet">
+          <p styleName="notice__who__pet__name">
+            {petNames}
+            <span styleName="notice__who__pet__rating">3.5</span>
           </p>
 
         </div>
@@ -52,7 +58,9 @@ function NoticeCard(props) {
       </div>
 
       <div styleName="notice__details">
-        <div styleName="notice__details__image" style={backgroundImage}></div>
+        <Link to={`${props.match.url}/${props.notice.id}`}>
+          <div styleName="notice__details__image" style={backgroundImage}></div>
+        </Link>
         <div styleName="notice__details__info">
 
           <div styleName="notice__details__info__location">

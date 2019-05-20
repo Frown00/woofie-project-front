@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ConversationList from './ConversationList';
+import PersonList from './PersonList';
 import { contacts } from '../mockup_data';
 
 export default class Contacts extends Component {
@@ -7,7 +7,7 @@ export default class Contacts extends Component {
     return (
       <div>
         <h2>Kontakty</h2>
-        <ConversationList conversations={contacts} />
+        <PersonList conversations={contacts} match={this.props.match} />
       </div>
     )
   }

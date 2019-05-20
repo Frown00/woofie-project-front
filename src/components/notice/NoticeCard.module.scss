@@ -12,7 +12,7 @@
   background: $yellow-normal;
   padding: 5px 20px;
   font-size: 0.8rem;
-  &__animal {
+  &__pet {
     display: block;
     &__name {
       display: flex;
@@ -86,7 +86,7 @@
     width: 100%;
     height: 150px;
     padding: 10px;
-    &__animal {
+    &__pet {
       flex-basis: 100px;
       &__name {
         margin: 0;

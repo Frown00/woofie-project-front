@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
-import ConversationList from './ConversationList';
+import PersonList from './PersonList';
+import { Route, withRouter } from 'react-router-dom';
 import { messages } from '../mockup_data';
+import Conversation from './Conversation';
 
-export default class Messages extends Component {
+class Messages extends Component {
   render() {
     return (
       <div>
         <h2>Wiadomości</h2>
-        <ConversationList conversations={messages} />
+        <PersonList conversations={messages} match={this.props.match} />
+
       </div>
     )
   }
 }
+
+export default Messages;
