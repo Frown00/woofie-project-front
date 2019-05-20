@@ -1,0 +1,159 @@
+@import "../common_styles/variables/colors.scss";
+
+.notice-info {
+  display: block;
+
+  &__selector {
+    border: 0;
+    height: 1px;
+    background: #e3e3e3;
+  }
+
+  a {
+   text-decoration: none;
+  }
+  &__owner-button {
+    background: $blue-normal;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+   
+  }
+
+  &__container {
+    display: flex;
+    margin-top: 20px;
+    font-size: 0.9rem;
+
+    &__image {
+      background: whitesmoke;
+      border: 2px solid #f3f3f3;
+      border-radius: 25px;
+      margin: 0 20px 0 0;
+      overflow: hidden;
+      align-self: flex-start;
+    }
+
+    &__header {
+      margin-top: 10px;
+      
+      &__name {
+        margin: 0;
+        font-weight: 700;
+      }
+
+      &__specie-title {
+        margin: 0;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      &__breed {
+        margin: 0;
+        margin-top: 5px;
+        font-weight: 300;
+      }
+      &__rating-container {
+        margin-top: 15px;
+        font-size: 0.8rem;
+
+          &__rating {
+            background: #333;
+            color: white;
+            border: 2px solid $yellow-dark;
+            font-weight: 700;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+          }
+
+          &__count {
+            margin-left: 20px;
+          }
+       } 
+
+     
+    }
+  }
+}
+
+.notice-info__keeping {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    margin: 0;
+    &__from, &__to {
+      margin-top: 10px;
+  
+      .date {
+        margin: 0;
+        font-weight: 700;
+      }
+      .time {
+        margin: 0;
+  
+        &::first-letter {
+          text-transform: capitalize;
+        } 
+      }
+    }
+  
+    &__timeline {
+      flex: 1;
+      margin: 0 20px;
+      width: 50px;
+    }
+  }
+  
+}
+
+.notice-info__description {
+  margin-top: 50px;
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__content {
+    font-size: 0.8rem;
+  }
+}
+
+.notice-info__place {
+  margin-top: 50px;
+  &__title {
+    font-weight: 700;
+  }
+
+  &__image {
+    margin-top: 30px;
+    border-radius: 25px;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  &__street {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  &__info {
+    color: #999;
+    font-size: 0.5rem;
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+}

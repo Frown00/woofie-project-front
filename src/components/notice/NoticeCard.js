@@ -59,7 +59,14 @@ function NoticeCard(props) {
       </div>
 
       <div styleName="notice__details">
-        <Link to={`${props.match.url}/${props.notice.id}`}>
+        <Link
+          to={{
+            pathname: `${props.match.url}/${props.notice.id}`,
+            state: {
+              notice: props.notice
+            }
+          }}
+        >
           <Image imageSrc={image} width={300} height={200} />
         </Link>
 
@@ -104,6 +111,7 @@ function NoticeCard(props) {
         </div>
 
       </div>
+
     </div>
   )
 }

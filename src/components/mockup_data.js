@@ -11,7 +11,21 @@ export const pets = [
     specie: 'Pies',
     breed: 'York',
     description: 'Mały wesoły piesek, uwielbia bawi się i gryźć kości',
-    rating: 4.0
+    rating: '4.0',
+    allRatings: [
+      {
+        rating: '3.5',
+        user: {
+          name: "Adam Nowak"
+        }
+      },
+      {
+        rating: '4.5',
+        user: {
+          name: "Adam Nowak"
+        }
+      }
+    ]
   },
   {
     image: pet2,
@@ -19,7 +33,21 @@ export const pets = [
     specie: 'Kot',
     breed: 'Dachowiec',
     description: 'Puszysty kot z rodowodem persa',
-    rating: 3.7
+    rating: 3.7,
+    allRatings: [
+      {
+        rating: '3.5',
+        user: {
+          name: "Adam Nowak"
+        }
+      },
+      {
+        rating: '4.5',
+        user: {
+          name: "Adam Nowak"
+        }
+      }
+    ]
   },
 
 ]
@@ -27,14 +55,29 @@ export const pets = [
 export const users = [
   {
     name: "Janusz Kowalski",
-    rating: 3.5,
+    rating: 4.7,
     allRatings: [
       {
-        rating: 3.5,
+        rating: 4,
         user: {
-          name: "Adam Nowak"
+          name: "Adam Nowak",
+          body: "Polecam tego użytkownika"
         }
-      }
+      },
+      {
+        rating: 5,
+        user: {
+          name: "Piotr Frączewski",
+          body: "Polecam i pozdrawiam!"
+        }
+      },
+      {
+        rating: 5,
+        user: {
+          name: "Iza Małysz",
+          body: "Polecam!"
+        }
+      },
     ],
     phoneNumber: "645890345",
     city: "Wrocław",
@@ -49,12 +92,13 @@ export const users = [
   },
   {
     name: "Małgorzata Konewka",
-    rating: 3.9,
+    rating: '4.0',
     allRatings: [
       {
-        rating: 3.5,
+        rating: 4,
         user: {
-          name: "Janusz Kowalski"
+          name: "Janusz Kowalski",
+          body: "Polecam tego użytkownika"
         }
       }
     ],

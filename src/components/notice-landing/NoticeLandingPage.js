@@ -23,7 +23,6 @@ class NoticeLandingPage extends Component {
   render() {
     return (
       <div styleName="panel">
-        <div styleName="panel__filter-button" className="button button-secondary">Filtry</div>
         <div styleName="panel__content">
           <Route
             exact path={`${this.props.match.url}`}

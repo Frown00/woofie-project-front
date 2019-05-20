@@ -43,8 +43,12 @@ class NoticeList extends Component {
       </ul>
     console.log(this.props.match.url);
     return (
-      <div styleName="notice-list-container">
-        {noticeList}
+      <div styleName="panel">
+        <div styleName="panel__filter-button" className="button button-secondary">Filtry</div>
+        <div styleName="notice-list-container">
+          {noticeList}
+        </div>
+
       </div>
     )
   }
