@@ -11,6 +11,7 @@ import TimeLine from '../common/TimeLine';
 
 import moment from 'moment';
 import 'moment/locale/pl';
+import NoticeApplyButtons from './NoticeApplyButtons';
 
 const subNavbarLinks = [
   {
@@ -128,6 +129,7 @@ class NoticeMoreInfo extends Component {
             Aby poznać dokładną lokalizację należy skontakotwać się z właścicielem
           </p>
         </div>
+        <NoticeApplyButtons />
       </div >
     )
   }

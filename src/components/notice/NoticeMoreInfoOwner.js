@@ -6,6 +6,7 @@ import { notices } from '../mockup_data';
 import Image from '../common/Image';
 import PetList from './PetList';
 import CommentList from './CommentList';
+import NoticeApplyButtons from './NoticeApplyButtons';
 
 class NoticeMoreInfoOwner extends Component {
   constructor(props) {
@@ -88,6 +89,7 @@ class NoticeMoreInfoOwner extends Component {
             <CommentList comments={allRatings} />
           </div>
         </div>
+        <NoticeApplyButtons />
       </div >
 
     )
