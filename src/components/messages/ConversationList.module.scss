@@ -1,0 +1,13 @@
+.conversation-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 10px;
+
+  a {
+    text-decoration: none;
+  }
+  &__item {
+    margin: 10px;
+  }
+}

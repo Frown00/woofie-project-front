@@ -1,0 +1,38 @@
+.notice-list-container {
+  display: flex;
+  justify-content: center;
+}
+
+.notice-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+  &__item {
+    padding: 10px;
+    flex-basis: 300px;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  &__filter-button {
+    align-self: flex-end;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    height: auto;
+  }
+}

@@ -1,0 +1,20 @@
+@import "../common_styles/variables/colors.scss";
+
+.login {
+  margin-top: 20px;
+  &__form {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    &__submit {
+      background: $blue-normal;
+      border: 0;
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 25px;
+      color: white;
+    }
+  }
+}

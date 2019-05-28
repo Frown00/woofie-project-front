@@ -1,10 +1,16 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
+import CSSModules from 'react-css-modules';
+import styles from './Header.module.scss';
+
+import websiteLogo from '../../img/woofie_logo.png';
+import menuIcon from '../../img/icons/menu.png';
 /**
  * General component description in JSDoc format. Markdown is *supported*.
  */
-export default class Header extends Component {
+class Header extends Component {
   static propTypes = {
     /** Description of prop "foo". */
     foo: PropTypes.number,
@@ -16,11 +22,21 @@ export default class Header extends Component {
     foo: 42
   }
 
+
   render() {
     return (
       <header>
-        Header
+        <div styleName="header">
+          <div styleName="header__background"></div>
+          <img styleName="header__hamburger" src={menuIcon} alt="" />
+          <Link to="/announcements">
+            <img styleName="header__logo" src={websiteLogo} alt="logo" />
+          </Link>
+        </div>
       </header>
     )
   }
 }
+
+
+export default CSSModules(Header, styles);
