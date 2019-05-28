@@ -52,10 +52,10 @@ class TextareaField extends Component {
 
   render() {
     return (
-      <div styleName="form__container">
+      <div styleName={this.props.noRadius ? "form__container--no-radius" : "form__container"}>
         <textarea
           rows={this.state.rows}
-          styleName="form__container__textarea"
+          styleName={"form__container__textarea"}
           placeholder={this.props.placeholder}
           name={this.props.name}
           value={this.props.value}

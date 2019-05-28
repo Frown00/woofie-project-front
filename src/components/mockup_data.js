@@ -54,6 +54,7 @@ export const pets = [
 
 export const users = [
   {
+    userId: 1000,
     name: "Janusz Kowalski",
     rating: 4.7,
     allRatings: [
@@ -91,6 +92,7 @@ export const users = [
     birthDate: "1987-10-10"
   },
   {
+    userId: 1200,
     name: "Małgorzata Konewka",
     rating: '4.0',
     allRatings: [
@@ -195,7 +197,24 @@ export const messages = [
       id: 1345,
       messages: [
         {
-
+          userId: 1000,
+          body: "Cześć!",
+          createdAt: "10:59 10.06"
+        },
+        {
+          userId: 1000,
+          body: "Czy jesteś w stanie zaopiekować się dłużej moim pupilem?",
+          createdAt: "11:00 10.06"
+        },
+        {
+          userId: 1200,
+          body: "Cześć!",
+          createdAt: "11:02 10.06"
+        },
+        {
+          userId: 1200,
+          body: "Jasne!",
+          createdAt: "11:03 10.06"
         }
       ]
     }

@@ -21,7 +21,8 @@ import NoticesPage from './components/notice/NoticesPage';
 import ProfilePage from './components/profile/ProfilePage';
 import NoticeMoreInfo from './components/notice/NoticeMoreInfo';
 import NoticeLandingPage from './components/notice-landing/NoticeLandingPage';
-
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 
 const navLinkList = [
   {
@@ -52,6 +53,8 @@ class App extends Component {
               <Route exact path="/">
                 <Redirect to="/announcements" />
               </Route>
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
               <Route path="/announcements" component={NoticeLandingPage} />
               <Route path="/communicator" component={MessagesPage} />
               <Route path="/notices" component={NoticesPage} />

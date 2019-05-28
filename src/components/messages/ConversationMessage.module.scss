@@ -1,0 +1,41 @@
+@import "../common_styles/variables/colors.scss";
+
+.message, .user-message{
+  display: inline-block;
+  position: relative;
+  
+  margin-bottom: 20px;
+  margin-top: 20px;
+  &__body {
+    display: block;
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #e3e3e3;
+    background: white;
+    border-radius: 30px;
+  }
+
+  &__date {
+    display: block;
+    position: absolute;
+    right: 10px;
+    margin: 0;
+    margin-top: 5px;
+    font-size: 0.6rem;
+    color: #888;
+  }
+}
+
+.user-message {
+  &__body {
+    background: $blue-bright;
+    color: white;  
+  }
+}
+
+.user-message-container {
+  display: flex;
+  justify-content: flex-end;
+}
