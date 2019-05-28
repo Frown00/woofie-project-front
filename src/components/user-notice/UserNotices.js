@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import UserNoticeCard from './UserNoticeCard';
 import { userNotices } from '../mockup_data';
 import { withRouter } from 'react-router-dom';
-
+import CSSModules from 'react-css-modules';
+import styles from './UserNotices.module.scss';
 
 class UserNotices extends Component {
   constructor(props) {
@@ -23,21 +24,19 @@ class UserNotices extends Component {
       </div>;
     if (this.state.notices !== null && this.state.notices !== undefined)
       userNotices =
-        <ul>
-
+        <ul styleName="user-notices__list">
           {
             this.state.notices.map((notice, key) =>
-              <li key={key}>
+              <li key={key} styleName="user-notices__list__item">
                 <UserNoticeCard
                   noticeId={notice.id} noticeInfo={notice} match={this.props.match} />
               </li>
             )
           }
-
         </ul>
     return (
-      <div>
-        <h2>Moje ogłoszenia</h2>
+      <div styleName="user-notices">
+        <h2 styleName="user-notices__title">Moje ogłoszenia</h2>
         {userNotices}
       </div>
     )
@@ -45,4 +44,4 @@ class UserNotices extends Component {
 
 }
 
-export default withRouter(UserNotices);
+export default withRouter(CSSModules(UserNotices, styles));

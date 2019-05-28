@@ -229,9 +229,7 @@ export const messages = [
     conversation: {
       id: 1348,
       messages: [
-        {
 
-        }
       ]
     }
   },
@@ -266,59 +264,6 @@ export const contacts = [
     }
   },
 
-];
-
-export const userNotices = [
-  {
-    id: 12334,
-    publishDate: '10-10-2019 10:53:45',
-    keepingDateFrom: '2019-10-10T13:24:00',
-    keepingDateTo: '2019-10-15T23:24:00',
-    reward: 200,
-    status: 'ACTIVE',
-    city: 'Wrocław',
-    street: 'Warszawska',
-    owner: users[0],
-    pet: [
-      pets[0]
-    ]
-  },
-  {
-    id: 12339,
-    publishDate: '10-10-2019 10:53:45',
-    keepingDateFrom: '2019-10-10T13:24:00',
-    keepingDateTo: '2019-10-15T23:24:00',
-    reward: 200,
-    status: 'ACTIVE',
-    city: 'Wrocław',
-    street: 'Warszawska',
-    owner: users[0],
-    pet: [
-      pets[0]
-    ]
-  },
-
-];
-
-export const applicationsAccepted = [
-  {
-    status: 'ACCEPTED',
-    applicationDate: '10.10.2019 10:55:00',
-    responseDate: null,
-    announcement: {
-      publishDate: '10-10-2019 10:53:45',
-      keepingDateFrom: '2019-10-10T13:24:00',
-      keepingDateTo: '2019-10-15T23:24:00',
-      reward: 200,
-      status: 'Aktywny',
-      city: 'Wrocław',
-      street: 'Warszawska',
-      owner: users[0],
-      pet: [
-        pets[0]
-      ]
-    }
-  }
 ];
 
 export const applications = [
@@ -375,5 +320,68 @@ export const applications = [
     }
   }
 ];
+
+export const userNotices = [
+  {
+    id: 12334,
+    publishDate: '10-10-2019 10:53:45',
+    endDate: null,
+    keepingDateFrom: '2019-10-10T13:24:00',
+    keepingDateTo: '2019-10-15T23:24:00',
+    reward: 200,
+    status: 'ACTIVE',
+    city: 'Wrocław',
+    street: 'Warszawska',
+    owner: users[0],
+    pets: [
+      pets[0]
+    ],
+    applications: [
+
+    ]
+  },
+  {
+    id: 12339,
+    publishDate: '10-10-2019 10:53:45',
+    endDate: '10-11-2019 10:53:45',
+    keepingDateFrom: '2019-10-10T13:24:00',
+    keepingDateTo: '2019-10-15T23:24:00',
+    reward: 200,
+    status: 'CLOSED',
+    city: 'Wrocław',
+    street: 'Warszawska',
+    owner: users[0],
+    pets: [
+      pets[1], pets[0]
+    ],
+    applications: [
+
+    ]
+  },
+
+];
+
+export const applicationsAccepted = [
+  {
+    status: 'ACCEPTED',
+    applicationDate: '10.10.2019 10:55:00',
+    responseDate: null,
+    announcement: {
+      publishDate: '10-10-2019 10:53:45',
+      keepingDateFrom: '2019-10-10T13:24:00',
+      keepingDateTo: '2019-10-15T23:24:00',
+      reward: 200,
+      status: 'Aktywny',
+      city: 'Wrocław',
+      street: 'Warszawska',
+      owner: users[0],
+      pet: [
+        pets[0]
+      ]
+    }
+  }
+];
+
+
 
 
