@@ -1,56 +1,74 @@
-@import "../common_styles/variables/colors.scss";
+@import '../common_styles/variables/colors.scss';
 
-.notice {
+.application {
+  display: block;
+  font-size: 0.8rem;
+  margin: 0 auto;
   margin-bottom: 70px;
   border-radius: 10px;
   border: 2px solid #E3E3E3;
   box-shadow: 5px 10px 10px 0px rgba(224,224,224,1);
   overflow: hidden;
-} 
+  width: 300px;
 
-.notice__who {
-  background: $yellow-normal;
-  padding: 5px 20px;
-  font-size: 0.8rem;
-  &__pet {
-    display: block;
-    &__name {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-weight: 500;
-      margin: 0;
+  &__message-button {
+    border: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 0;
+    background: $blue-normal;
+    color: white;
+    outline: none;
+
+    &:hover {
+      background: $blue-dark;
     }
-
-   
   }
 
-  &__owner {
-    margin-top: 0.5rem;
-    &__title {
-      color: black;
-      font-size: 0.7rem;
-      margin: 0;
-      font-weight: 200;
-    }
+  &__info {
+    background: $yellow-normal;
+    padding: 10px;
+    position: relative;
+  }
 
-    &__name {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0;
-      color: black;
-      font-weight: 700;
+  &__date {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  &__date-title {
+    margin: 0;
+    font-size: 0.7rem;
+  }
+  &__cancel-button {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $red-normal;
+    border: 0;
+    outline: none;
+    padding: 10px 10px;
+    border-radius: 0 0 0 20px;
+    color: white;
+
+    &:hover {
+      background: $red-dark;
     }
-    
+  }
+
+  &__status {
+    margin: 0;
+    font-weight: 700;
   }
 }
 
-.notice__details {
+.application__details {
   color: black;
   font-size: 0.8rem;
   position: relative;
- 
+
 
   &__selector {
     height: 1px;
@@ -120,25 +138,19 @@
       }
     }
 
+    
+
     &__more-info-button {
       color: black;
       position: absolute;
-      bottom: 57px;
+      bottom: 70px;
       right: 10px;
       background: $yellow-normal;
       padding: 0.7em 1.5em;
       border-radius: 25px;
     }
 
-    &__button-submit {
-      width: 100%;
-      height: 40px;
-      font-size: 14px;
-      border-radius: 0;
-    }
+    
   }
+
 }
-
-
-
-

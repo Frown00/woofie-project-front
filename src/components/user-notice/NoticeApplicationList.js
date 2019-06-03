@@ -35,11 +35,11 @@ class NoticeApplicationList extends Component {
 
     const petNames = getPetNames(notice.pets);
     return (
-      <div>
+      <div styleName="applications">
         <h2>Zgłoszenia</h2>
-        <div>
-          <p>{petNames}</p>
-          <p>Data opieki</p>
+        <div styleName="applications__announcement">
+          <p styleName="applications__announcement__pets">{petNames}</p>
+          <p styleName="applications__announcement__keeping">Data opieki</p>
           <DateTimeLine
             dateFrom={notice.keepingDateFrom}
             dateTo={notice.keepingDateTo}

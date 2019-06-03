@@ -6,6 +6,7 @@ import person2 from '../img/mockup_data/people/man1.jpg';
 
 export const pets = [
   {
+    id: 1000,
     image: pet1,
     name: 'Pimpek',
     specie: 'Pies',
@@ -28,6 +29,7 @@ export const pets = [
     ]
   },
   {
+    id: 2000,
     image: pet2,
     name: 'Skóra',
     specie: 'Kot',
@@ -280,17 +282,11 @@ export const applications = [
       status: 'ACTIVE',
       city: 'Wrocław',
       street: 'Warszawska',
-      owner: {
-        name: 'Janusz Kowalski',
-        rating: 3.5,
-      },
-      pet: {
-        image: pet1,
-        name: 'Pimpek',
-        specie: 'Pies',
-        breed: 'York',
-        rating: 4.0
-      }
+      owner: users[0],
+      pets: [
+        pets[0]
+      ]
+
     },
     appliedUser: users[0]
   },
@@ -307,17 +303,10 @@ export const applications = [
       status: 'Aktywny',
       city: 'Wrocław',
       street: 'Warszawska',
-      owner: {
-        name: 'Janusz Kowalski',
-        rating: 3.5,
-      },
-      pet: {
-        image: pet1,
-        name: 'Pimpek',
-        specie: 'Pies',
-        breed: 'York',
-        rating: 4.0
-      }
+      owner: users[0],
+      pets: [
+        pets[1]
+      ]
     }
   }
 ];

@@ -1,4 +1,11 @@
 @import "../common_styles/variables/colors.scss";
 
+.application-list {
+  list-style-type: none;
+  padding: 0;
+  &__item {
+    margin-bottom: 20px;
+  }
+}
 
 

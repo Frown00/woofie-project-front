@@ -6,6 +6,7 @@ import RatingsPage from './RatingsPage';
 import ApplicationList from './ApplicationList';
 import EditProfile from './EditProfile';
 import PetsList from './PetsList';
+import AddPet from './AddPet';
 import { users, applications } from '../mockup_data';
 
 const subNavbarLinks = [
@@ -58,12 +59,16 @@ export default class ProfilePage extends Component {
           component={() => <EditProfile profile={users[0]} match={this.props.match} />}
         />
         <Route
-          path={`${this.props.match.url}/profile/edit/pets`}
+          exact path={`${this.props.match.url}/profile/edit/pets`}
           component={() => <PetsList profile={users[0]} match={this.props.match} />}
         />
         <Route
-          path={`${this.props.match.url}/profile/pets`}
+          exact path={`${this.props.match.url}/profile/pets`}
           component={() => <PetsList profile={users[0]} match={this.props.match} />}
+        />
+        <Route
+          exact path={`${this.props.match.url}/profile/pets/add`}
+          component={() => <AddPet profile={users[0]} match={this.props.match} />}
         />
       </div>
     )
