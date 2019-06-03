@@ -9,6 +9,8 @@ import TimeLine from '../common/TimeLine';
 import NoticeMoreInfo from '../notice/NoticeMoreInfo';
 import Image from '../common/Image';
 import Prompt from '../common/Prompt';
+import DateTimeLine from '../common/DateTimeLine';
+import Badge from '../common/Badge';
 
 moment.locale('pl');
 
@@ -49,6 +51,7 @@ class NoticeCard extends Component {
     let backgroundImage;
     const notice = this.props.notice;
     const owner = this.props.notice.owner;
+    const pets = this.props.notice.pets;
     const petNames = getPetNames(this.props.notice.pets);
     console.log(petNames);
     const image = this.props.notice.pets[0].image;
@@ -79,7 +82,7 @@ class NoticeCard extends Component {
           <div styleName="notice__who__pet">
             <p styleName="notice__who__pet__name">
               {petNames}
-              <span styleName="notice__who__pet__rating">3.5</span>
+              <Badge isPet={true} rating={pets[0].rating} />
             </p>
 
           </div>
@@ -87,7 +90,7 @@ class NoticeCard extends Component {
             <p styleName="notice__who__owner__title">Wystawiający</p>
             <p styleName="notice__who__owner__name">
               {owner.name}
-              <span styleName="notice__who__owner__rating">3.5</span>
+              <Badge rating={owner.rating} />
             </p>
           </div>
         </div>
@@ -114,19 +117,8 @@ class NoticeCard extends Component {
               </p>
             </div>
             <hr styleName="notice__details__selector" />
-            <div styleName="notice__details__info__keeping">
-              <div styleName="notice__details__info__keeping__date-from">
-                <p styleName="date">{moment('2017-03-10').format('DD MMMM')}</p>
-                <p styleName="time">{moment('2017-03-10 10:00').format("dddd h:mm")}</p>
-              </div>
-              <div styleName="notice__details__info__keeping__timeline">
-                <TimeLine />
-              </div>
-              <div styleName="notice__details__info__keeping__date-to">
-                <p styleName="date">{moment('2017-03-10').format('DD MMMM')}</p>
-                <p styleName="time">{moment('2017-03-10 10:00').format("dddd h:mm")}</p>
-              </div>
-            </div>
+            <DateTimeLine dateFrom={notice.keepingDateFrom} dateTo={notice.keepingDateTo} />
+
             <hr styleName="notice__details__selector" />
             <div styleName="notice__details__info__reward">
               <p styleName="notice__details__info__reward__title">

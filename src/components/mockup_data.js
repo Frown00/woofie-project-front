@@ -291,7 +291,8 @@ export const applications = [
         breed: 'York',
         rating: 4.0
       }
-    }
+    },
+    appliedUser: users[0]
   },
   {
     id: '123234',
@@ -321,6 +322,12 @@ export const applications = [
   }
 ];
 
+// export const userApplications = [
+//   {
+
+//   }
+// ]
+
 export const userNotices = [
   {
     id: 12334,
@@ -337,7 +344,18 @@ export const userNotices = [
       pets[0]
     ],
     applications: [
-
+      {
+        user: users[0],
+        status: 'PENDING',
+        applicationDate: '10-10-2019 10:55:00',
+        responseDate: null,
+      },
+      {
+        user: users[1],
+        status: 'PENDING',
+        applicationDate: '10-10-2019 10:59:00',
+        responseDate: null,
+      }
     ]
   },
   {

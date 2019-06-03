@@ -22,7 +22,7 @@ class UserNoticeCard extends Component {
   }
 
   render() {
-    const { publishDate, endDate, keepingDateFrom, keepingDateTo, reward, status, city, street, pets } = this.props.noticeInfo;
+    const { publishDate, endDate, keepingDateFrom, keepingDateTo, reward, status, city, street, pets, applications } = this.props.noticeInfo;
     const petNames = getPetNames(pets);
     const image = pets[0].image;
     let statusName = '';
@@ -70,13 +70,20 @@ class UserNoticeCard extends Component {
           </p>
         </div>
       bottomButton =
-        <Link to={`${this.props.match.url}/${this.props.noticeInfo.id}/applications`}>
+        <Link
+          to={{
+            pathname: `${this.props.match.url}/${this.props.noticeInfo.id}/applications`,
+            state: {
+              noticeInfo: this.props.noticeInfo,
+              applications: this.props.noticeInfo.applications
+            }
+          }}
+        >
           <div styleName="user-notice__controls__applications">
-            Zgłoszenia <span styleName="user-notice__controls__applications__number">1</span>
+            Zgłoszenia <span styleName="user-notice__controls__applications__number">{applications.length}</span>
           </div>
         </Link>
     }
-    console.log(this.props.match.url);
     return (
       <div styleName="user-notice">
         <div styleName="user-notice__info">

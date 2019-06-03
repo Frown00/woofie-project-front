@@ -9,7 +9,7 @@ class Prompt extends Component {
     return (
       <div styleName="prompt" style={{ display: this.props.display ? this.props.display : 'block' }}>
         <div styleName="prompt__content">
-          <p>
+          <p styleName="prompt__text">
             {this.props.question}
           </p>
           <div styleName="prompt__buttons">
