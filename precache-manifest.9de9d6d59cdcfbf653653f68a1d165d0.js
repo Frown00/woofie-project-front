@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/media/man1.30bb705e.jpg"
   },
   {
-    "revision": "c11d66bb7d12d892c9e2",
-    "url": "/woofie-project-front/static/css/main.e3f0884b.chunk.css"
+    "revision": "f80ed829ce3498687844",
+    "url": "/woofie-project-front/static/css/main.dd16e0bf.chunk.css"
   },
   {
     "revision": "614e4c07753cc45a527a",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/media/default_pet.59d120c0.jpg"
   },
   {
-    "revision": "8102d0eb9fdfd9cdd225",
-    "url": "/woofie-project-front/static/js/2.1db3b2fb.chunk.js"
+    "revision": "99004f76fb09e09fd0ac",
+    "url": "/woofie-project-front/static/js/2.78988e25.chunk.js"
   },
   {
     "revision": "dbffcf77b88bec5dc790a73b6abb7b8e",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/media/woman1.19dc8257.jpg"
   },
   {
-    "revision": "c11d66bb7d12d892c9e2",
-    "url": "/woofie-project-front/static/js/main.78e3e94d.chunk.js"
+    "revision": "f80ed829ce3498687844",
+    "url": "/woofie-project-front/static/js/main.00469bca.chunk.js"
   },
   {
     "revision": "12e65248541c895fba602891f1d52fe8",
@@ -52,11 +52,11 @@ self.__precacheManifest = [
     "url": "/woofie-project-front/static/media/citymap.2f6cf296.jpg"
   },
   {
-    "revision": "8102d0eb9fdfd9cdd225",
-    "url": "/woofie-project-front/static/css/2.eaccc89a.chunk.css"
+    "revision": "99004f76fb09e09fd0ac",
+    "url": "/woofie-project-front/static/css/2.1de0b248.chunk.css"
   },
   {
-    "revision": "fca16d46550e51d837866fc12972c63e",
+    "revision": "16f27e49f4f95526b326f68442ea869c",
     "url": "/woofie-project-front/index.html"
   }
 ];
