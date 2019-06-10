@@ -1,8 +1,18 @@
 @import "../common_styles/variables/colors.scss";
 
+.application-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .application-list {
   list-style-type: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: 320px 320px;
+  grid-column-gap: 50px;
+  align-items: center;
+  margin: 0 auto;
   &__item {
     margin-bottom: 20px;
   }

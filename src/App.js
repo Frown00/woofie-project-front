@@ -33,7 +33,7 @@ const navLinkList = [
   {
     to: "/notices",
     icon: noticeIcon,
-    text: "Dodaj ogłoszenie"
+    text: "Ogłoszenia"
   },
   {
     to: "/account",

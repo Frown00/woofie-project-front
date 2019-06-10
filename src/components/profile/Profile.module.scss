@@ -2,7 +2,8 @@
 
 .profile {
   display: block;
-
+  max-width: 800px;
+  margin: 0 auto;
   &__buttons {
     font-size: 0.8rem;
     display: flex;

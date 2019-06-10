@@ -36,11 +36,26 @@ function Navbar(props) {
 
           )
         }
-
       </ul>
-      <div>
 
-      </div>
+      <ul styleName="navbar-desktop">
+        {
+          props.navLinks.map((link, key) =>
+            <Link to={link.to} key={key}>
+              <li styleName="navbar-desktop__item" className="button">
+                <span styleName="navbar-desktop__item__content">
+                  <img styleName="navbar-desktop__item__content__image"
+                    src={link.icon}
+                    alt={link.text}
+                  />
+                </span>
+                <span styleName="navbar-desktop__text">{link.text}</span>
+              </li>
+            </Link>
+
+          )
+        }
+      </ul>
 
     </nav>
   )

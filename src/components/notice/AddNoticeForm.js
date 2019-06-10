@@ -50,7 +50,7 @@ class AddNoticeForm extends Component {
       case 1:
         form = (
           <div styleName="form">
-            <MultipleSelectField />
+            <MultipleSelectField emptyMsg="Nie dodano żadnego zwierzęcia" listTitle="Zwierzęta do opieki" />
             <TextAreaField
               minRows={3}
               maxRows={10}

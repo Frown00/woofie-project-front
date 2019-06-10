@@ -32,10 +32,10 @@ class Conversation extends Component {
         )}
       </div>
     return (
-      <div>
+      <div styleName="conversation">
         {personInfo}
         {messagesList}
-        <form>
+        <form styleName="conversation__send-message">
           <TextAreaField
             name="message"
             placeholder="Napisz coś..."

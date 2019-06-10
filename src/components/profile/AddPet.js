@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import CSSModules from 'react-css-modules';
 import styles from './AddPet.module.scss';
 import ImageEdit from '../common/form/ImageEdit';
 import InputField from '../common/form/InputField';
 import TextAreaField from '../common/form/TextareaField';
+import SelectField from '../common/form/SelectField';
+
 
 class AddPet extends Component {
   constructor(props) {
@@ -16,16 +19,37 @@ class AddPet extends Component {
       specie: '',
       breed: '',
       description: '',
+      allSpecies: [],
+      isLoading: true
     }
 
     this.goBack = this.goBack.bind(this);
     this.onChangeValue = this.onChangeValue.bind(this);
     this.onChangeImage = this.onChangeImage.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.changeSelectedValue = this.changeSelectedValue.bind(this)
+  }
+
+
+
+
+  componentDidMount() {
+    axios.get('http://localhost:8080/species/getAll')
+      .then((species) => {
+        this.setState({ allSpecies: species.data, isLoading: false })
+      });
+
+
   }
 
   goBack() {
     this.props.history.goBack();
+  }
+
+  changeSelectedValue(selectedSpecies) {
+    this.setState({
+      species: selectedSpecies
+    });
   }
 
   onChangeValue(e) {
@@ -46,6 +70,16 @@ class AddPet extends Component {
   }
 
   render() {
+
+    const { isLoading, allSpecies } = this.state;
+    let options = []
+    if (isLoading) {
+      options = []
+    }
+    else {
+      options = allSpecies.map(species => species.name);
+    }
+
     return (
       <div styleName="add-pet">
         <ul styleName="profile-navbar">
@@ -77,14 +111,10 @@ class AddPet extends Component {
             value={this.state.birthDate}
             onChange={this.onChangeValue}
           />
-          <InputField
-            label="Gatunek"
-            name="specie"
-            type="text"
-            value={this.state.specie}
-            placeholder="Pies"
-            onChange={this.onChangeValue}
-          />
+          <SelectField
+            select="Wybierz gatunek"
+            options={options}
+            onChange={this.changeSelectedValue} />
           <InputField
             label="Odmiana"
             name="breed"

@@ -7,6 +7,8 @@ import styles from './Header.module.scss';
 
 import websiteLogo from '../../img/woofie_logo.png';
 import menuIcon from '../../img/icons/menu.png';
+
+import Menu from './Menu';
 /**
  * General component description in JSDoc format. Markdown is *supported*.
  */
@@ -28,11 +30,17 @@ class Header extends Component {
       <header>
         <div styleName="header">
           <div styleName="header__background"></div>
-          <img styleName="header__hamburger" src={menuIcon} alt="" />
+          <div styleName="header__hamburger">
+            <Menu />
+          </div>
           <Link to="/announcements">
             <img styleName="header__logo" src={websiteLogo} alt="logo" />
           </Link>
+          <Link to="/login">
+            <div styleName="header__login">Zaloguj się</div>
+          </Link>
         </div>
+
       </header>
     )
   }

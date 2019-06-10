@@ -10,7 +10,6 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  
   &__item {
     padding: 10px;
     flex-basis: 300px;
@@ -34,5 +33,33 @@
 
   &__content {
     height: auto;
+  }
+}
+
+@media only screen and (min-width: 500px)  {
+  .panel__filter-button {
+    align-self: flex-start;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (min-width: 720px)  {
+  .notice-list {
+    display: grid;
+    grid-template-columns: 320px 320px;
+    grid-column-gap: 50px;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1100px)  {
+  .notice-list {
+    display: grid;
+    grid-template-columns: 320px 320px 320px;
+    grid-column-gap: 50px;
+    align-items: center;
   }
 }

@@ -8,10 +8,11 @@
 
 .applications {
   display: block;
-
+  max-width: 800px;
+  margin: 0 auto;
   &__announcement {
     margin-bottom: 60px;
-
+    max-width: 500px;
     &__pets {
       font-weight: 700;
     }

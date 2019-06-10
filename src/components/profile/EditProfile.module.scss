@@ -1,6 +1,19 @@
-.form__submit {
-  border: 0;
-  padding: 1rem;
-  margin-top: 16px;
-  width: 100%;
+.edit-profile {
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__form {
+    max-width: 400px;
+
+
+    &__submit {
+      border: 0;
+      padding: 1rem;
+      margin-top: 16px;
+      width: 100%;
+    }
+  }
 }
+
+
+

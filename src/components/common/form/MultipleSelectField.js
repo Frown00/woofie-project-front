@@ -63,16 +63,21 @@ class MultipleSelectField extends Component {
         </ul>
     }
 
+    const listTitle = this.state.addedItems.length === 0 ? this.props.emptyMsg : this.props.listTitle;
+
     return (
       <div styleName="form__container">
         <div styleName="form__container__select-container">
           <div styleName="form__container__select-container__select">
-            <SelectField select="Wybierz zwierze" options={['Azor', 'Pimpek']} onChange={this.changeSelectedValue} />
+            <SelectField
+              select="Wybierz zwierze"
+              options={['Azor', 'Pimpek']}
+              onChange={this.changeSelectedValue} />
           </div>
           <button styleName="form__container__select-container__button" onClick={this.addToList}>+</button>
         </div>
         <div styleName="form__container__list-container">
-          Lista
+          {listTitle}
           {addedItems}
         </div>
       </div>

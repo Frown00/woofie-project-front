@@ -34,7 +34,7 @@ class ApplicationList extends Component {
         </ul>
     }
     return (
-      <div>
+      <div styleName="application-list-container">
         <SubNavbar links={this.props.subNavbarLinks} match={this.props.match} />
         <Profile match={this.props.match} />
         <h2>Moje zgłoszenia</h2>

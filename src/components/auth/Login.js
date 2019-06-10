@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import InputField from '../common/form/InputField';
 import CSSModules from 'react-css-modules';
 import styles from './Login.module.scss';
@@ -25,7 +26,7 @@ class Login extends Component {
     return (
       <div styleName="login">
         <h2>Logowanie</h2>
-        <div styleName="login__form">
+        <form styleName="login__form">
           <InputField
             name="login"
             type="email"
@@ -38,8 +39,9 @@ class Login extends Component {
             label="Password"
             onChange={this.onChangeValue}
           />
+          <div styleName="register">Nie masz konta? <span styleName="register-link"><Link to="/register">Zarejestruj się</Link></span></div>
           <input styleName="login__form__submit" type="submit" value="Zaloguj się" />
-        </div>
+        </form>
 
       </div>
     )
