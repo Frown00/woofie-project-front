@@ -3,7 +3,7 @@ import InputField from '../common/form/InputField';
 import CSSModules from 'react-css-modules';
 import styles from './Register.module.scss';
 
-class Login extends Component {
+class Register extends Component {
 
   constructor(props) {
     super(props);
@@ -54,4 +54,4 @@ class Login extends Component {
 
 }
 
-export default CSSModules(Login, styles);
+export default CSSModules(Register, styles);

@@ -22,7 +22,7 @@ class Menu extends Component {
     return (
       <div>
         <button onClick={this.toggleActivateHamburger} styleName={`hamburger ${this.state.isActive ? "hamburger--active" : ""}`} aria-label="Menu">
-          <span styleName="hamburger__container" tabindex="-1">
+          <span styleName="hamburger__container" tabIndex="-1">
             <span styleName="hamburger__bars"></span>
           </span>
         </button>

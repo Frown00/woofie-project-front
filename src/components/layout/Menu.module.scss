@@ -29,12 +29,12 @@
 
 
 .hamburger {
-
   margin: 0;
   padding: 0;
   border: 0;
   background-color: transparent;
   cursor: pointer;
+  
   &:focus {
     & > .hamburger__container {
       box-shadow: 0 0 2px 2px #51a7e8;
@@ -57,6 +57,7 @@
   height: 5px;
   background: white;
   transition: transform 220ms ease-in-out;
+ 
   &:before, &:after {
     display: block;
     position: absolute;
@@ -65,22 +66,26 @@
     background: white;
     content: '';
   }
+ 
   &:before {
     top: -12px;
     transition: top 100ms 250ms ease-in, transform 220ms ease-in-out;
   }
+ 
   &:after {
     bottom: -12px;
     transition: bottom 100ms 250ms ease-in, 
-      transform 220ms ease-in-out;
+    transform 220ms ease-in-out;
   }
 }
 
 .hamburger--active {
+ 
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1001;
+ 
   .hamburger__bars {
     transform: rotate(225deg);
     transition: transform 220ms 120ms ease-in-out;
