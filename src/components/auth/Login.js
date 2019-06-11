@@ -26,21 +26,16 @@ class Login extends Component {
     const basicAuth = `Basic ${user}:${pass}`;
     const auth = "Basic Y3JtQ2xpZW50MTpjcm1TdXBlclNlY3JldA=="
 
-    axios.defaults.withCredentials = true;
-    const headers = {
-      headers: {
 
-      }
-    }
     axios.get(url, {
       headers: {
-        "Authorization": basicAuth,
+        "Authorization": auth,
       }
     }).then((response) => {
       console.log('Authenticated');
     }).catch(function (error) {
       console.log(error);
-      // console.log('Error on Authentication');
+      //console.log('Error on Authentication');
     });
   }
 
