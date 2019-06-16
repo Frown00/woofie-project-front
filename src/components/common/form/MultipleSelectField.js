@@ -9,7 +9,8 @@ class MultipleSelectField extends Component {
     super(props);
     this.state = {
       selectedValue: '',
-      addedItems: []
+      addedItems: [],
+      options: ['Azor', 'Pimpek']
     }
 
     this.addToList = this.addToList.bind(this);
@@ -18,13 +19,15 @@ class MultipleSelectField extends Component {
 
   }
 
-  addToList(e) {
-    e.preventDefault();
+  addToList() {
     if (this.state.selectedValue !== '') {
       const items = this.state.addedItems;
       items.push(this.state.selectedValue);
+      let options = this.state.options;
+      options = options.filter((name) => name !== this.state.selectedValue);
       this.setState({
-        addedItems: items
+        addedItems: items,
+        options: options,
       });
     }
     else {
@@ -37,15 +40,24 @@ class MultipleSelectField extends Component {
     const optionToRemove = e.currentTarget.parentNode.children[0].innerHTML;
     let items = this.state.addedItems;
     items = items.filter(el => el !== optionToRemove);
+    let options = this.state.options;
+
+    options.push(optionToRemove);
+    console.log(options);
+
     this.setState({
-      addedItems: items
+      addedItems: items,
+      options: options
     });
   }
 
   changeSelectedValue(newVal) {
     this.setState({
       selectedValue: newVal
-    });
+    },
+      this.addToList
+    );
+
   }
 
   render() {
@@ -71,10 +83,11 @@ class MultipleSelectField extends Component {
           <div styleName="form__container__select-container__select">
             <SelectField
               select="Wybierz zwierze"
-              options={['Azor', 'Pimpek']}
-              onChange={this.changeSelectedValue} />
+              options={this.state.options}
+              onChange={this.changeSelectedValue}
+              addToList={this.addToList} />
           </div>
-          <button styleName="form__container__select-container__button" onClick={this.addToList}>+</button>
+          {/* <button styleName="form__container__select-container__button" onClick={this.addToList}>+</button> */}
         </div>
         <div styleName="form__container__list-container">
           {listTitle}

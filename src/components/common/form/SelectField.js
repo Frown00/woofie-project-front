@@ -9,7 +9,7 @@ class SelectField extends Component {
     super(props);
     this.state = {
       isOptionsOn: false,
-      selectValue: ''
+      selectValue: '',
     };
 
     this.showOptions = this.showOptions.bind(this);
@@ -32,22 +32,31 @@ class SelectField extends Component {
     const optionVal = e.target.innerHTML;
     this.setState({
       isOptionsOn: false,
-      selectValue: optionVal
+      selectValue: this.props.select
     });
     this.props.onChange(optionVal);
+    console.log(optionVal);
   }
 
   render() {
-    const optionsList =
+    let optionsList =
       <ul styleName="form__container__options__list">
-        {
-          this.props.options.map((option, key) =>
-            <li styleName="form__container__options__list__item" key={key} onClick={this.selectOption}>
-              {option}
-            </li>
-          )
-        }
-      </ul>
+        <li styleName="form__container__options__list__item">Brak zwierząt do dodania</li>
+      </ul>;
+
+    if (this.props.options.length > 0 && this.props.options !== null && this.props.options !== undefined) {
+      optionsList =
+        <ul styleName="form__container__options__list">
+          {
+            this.props.options.map((option, key) =>
+              <li styleName="form__container__options__list__item" key={key} onClick={this.selectOption}>
+                {option}
+              </li>
+            )
+          }
+        </ul>
+    }
+
     return (
       <div styleName="form__container">
         <p styleName={`form__container__select ${this.state.isOptionsOn ? "active" : ""}`} onClick={this.showOptions}>{this.state.selectValue}</p>

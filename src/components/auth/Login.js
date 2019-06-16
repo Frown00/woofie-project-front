@@ -32,7 +32,7 @@ class Login extends Component {
         "Authorization": auth,
       }
     }).then((response) => {
-      console.log('Authenticated');
+      console.log(response);
     }).catch(function (error) {
       console.log(error);
       //console.log('Error on Authentication');
