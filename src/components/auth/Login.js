@@ -43,12 +43,6 @@ class Login extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    // const url = `http://localhost:8080/token?password=${this.state.password}&username=${this.state.username}`;
-    // const user = 'crmClient1';
-    // const pass = 'crmSuperSecret';
-    // const basicAuth = `Basic ${user}:${pass}`;
-    // const auth = "Basic Y3JtQ2xpZW50MTpjcm1TdXBlclNlY3JldA=="
-
     const userData = {
       username: this.state.username,
       password: this.state.password,
@@ -58,16 +52,7 @@ class Login extends Component {
     }
     this.props.loginUser(userData);
 
-    // axios.get(url, {
-    //   headers: {
-    //     "Authorization": auth,
-    //   }
-    // }).then((response) => {
-    //   console.log(response);
-    // }).catch(function (error) {
-    //   console.log(error);
-    //   //console.log('Error on Authentication');
-    // });
+
   }
 
   onChangeValue(e) {

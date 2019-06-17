@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { connect } from 'react-redux';
 
 import checkToken from './utils/checkToken';
 import 'normalize.css';
