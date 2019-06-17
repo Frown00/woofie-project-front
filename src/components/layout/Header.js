@@ -1,31 +1,44 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { logoutUser } from '../../actions/authAction';
 
 import CSSModules from 'react-css-modules';
 import styles from './Header.module.scss';
 
 import websiteLogo from '../../img/woofie_logo.png';
-import menuIcon from '../../img/icons/menu.png';
 
 import Menu from './Menu';
 /**
  * General component description in JSDoc format. Markdown is *supported*.
  */
 class Header extends Component {
-  static propTypes = {
-    /** Description of prop "foo". */
-    foo: PropTypes.number,
-    /** Description of prop "baz". */
-    baz: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+
+  constructor(props) {
+    super(props);
+
+    this.logout = this.logout.bind(this);
   }
 
-  static defaultProps = {
-    foo: 42
+  logout(e) {
+    e.preventDefault();
+    this.props.logoutUser();
   }
-
 
   render() {
+    const { isAuthenticated, user } = this.props.oauth;
+
+    const authButton =
+      isAuthenticated ?
+        <div>
+          <div styleName="header__logout" onClick={this.logout}>Wyloguj się</div>
+        </div>
+        :
+        <Link to="/login">
+          <div styleName="header__login">Zaloguj się</div>
+        </Link>
+    console.log(isAuthenticated);
     return (
       <header>
         <div styleName="header">
@@ -36,9 +49,7 @@ class Header extends Component {
           <Link to="/announcements">
             <img styleName="header__logo" src={websiteLogo} alt="logo" />
           </Link>
-          <Link to="/login">
-            <div styleName="header__login">Zaloguj się</div>
-          </Link>
+          {authButton}
         </div>
 
       </header>
@@ -46,5 +57,15 @@ class Header extends Component {
   }
 }
 
+Header.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  oauth: PropTypes.object.isRequired
+};
 
-export default CSSModules(Header, styles);
+const mapStateToProps = (state) => ({
+  oauth: state.oauth
+});
+
+export default connect(mapStateToProps, { logoutUser })(
+  CSSModules(Header, styles)
+);

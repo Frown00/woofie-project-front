@@ -41,7 +41,7 @@ class SelectField extends Component {
   render() {
     let optionsList =
       <ul styleName="form__container__options__list">
-        <li styleName="form__container__options__list__item">Brak zwierząt do dodania</li>
+        <li styleName="form__container__options__list__item">{this.props.noOptions}</li>
       </ul>;
 
     if (this.props.options.length > 0 && this.props.options !== null && this.props.options !== undefined) {
@@ -70,12 +70,14 @@ class SelectField extends Component {
 
 SelectField.propTypes = {
   select: PropTypes.string,
+  noOptions: PropTypes.string,
   options: PropTypes.array,
   onChange: PropTypes.func
 };
 
 SelectField.defaultProps = {
   select: "Wybierz",
+  noOptions: "Brak opcji wyboru",
   options: []
 };
 

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { reducer } from 'react-redux-oauth2'
+import authReducer from './authReducer';
 
 export default combineReducers({
-  oauth: reducer,
+  oauth: authReducer
 });

@@ -14,7 +14,7 @@ class AddNoticeForm extends Component {
       dateFrom: '',
       dateTo: '',
       reward: '',
-      animals: [],
+      pets: [],
       remarks: ''
     }
     this.nextStep = this.nextStep.bind(this);
@@ -50,7 +50,11 @@ class AddNoticeForm extends Component {
       case 1:
         form = (
           <div styleName="form">
-            <MultipleSelectField emptyMsg="Nie dodano żadnego zwierzęcia" listTitle="Zwierzęta do opieki" />
+            <MultipleSelectField
+              select="Wybierz zwierzę"
+              noOptions="Brak zwierząt do dodania"
+              emptyMsg="Nie dodano żadnego zwierzęcia"
+              listTitle="Zwierzęta do opieki" />
             <TextAreaField
               minRows={3}
               maxRows={10}

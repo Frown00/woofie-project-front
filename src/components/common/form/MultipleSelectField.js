@@ -82,7 +82,8 @@ class MultipleSelectField extends Component {
         <div styleName="form__container__select-container">
           <div styleName="form__container__select-container__select">
             <SelectField
-              select="Wybierz zwierze"
+              select={this.props.select}
+              noOptions={this.props.noOptions}
               options={this.state.options}
               onChange={this.changeSelectedValue}
               addToList={this.addToList} />

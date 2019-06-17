@@ -2,6 +2,9 @@
 
 .add-pet {
   display: block;
+  max-width: 800px;
+  margin: 0 auto;
+
   &__add-button {
     outline: none;
     border: 0;
@@ -15,6 +18,11 @@
     &:hover {
       background: $blue-dark;
     }
+  }
+
+  &__form {
+    max-width: 500px;
+    margin: 0 auto; 
   }
 }
 

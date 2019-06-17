@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
 
+import checkToken from './utils/checkToken';
 import 'normalize.css';
 
 import CSSModules from 'react-css-modules';
 import styles from './App.module.scss';
 
 import store from './store';
+import PrivateRoute from './components/common/PrivateRoute';
 
 import Header from './components/layout/Header';
 import Navbar from './components/layout/Navbar';
@@ -31,7 +34,7 @@ const navLinkList = [
     text: "Wiadomości"
   },
   {
-    to: "/notices",
+    to: "/my-announcements",
     icon: noticeIcon,
     text: "Ogłoszenia"
   },
@@ -41,6 +44,8 @@ const navLinkList = [
     text: "Konto"
   }
 ];
+
+checkToken();
 
 class App extends Component {
   render() {
@@ -56,9 +61,9 @@ class App extends Component {
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
               <Route path="/announcements" component={NoticeLandingPage} />
-              <Route path="/communicator" component={MessagesPage} />
-              <Route path="/notices" component={NoticesPage} />
-              <Route path="/account" component={ProfilePage} />
+              <PrivateRoute path="/communicator" component={MessagesPage} />
+              <PrivateRoute path="/my-announcements" component={NoticesPage} />
+              <PrivateRoute path="/account" component={ProfilePage} />
             </Switch>
             <div styleName="navbar-dom-substitute"></div>
 

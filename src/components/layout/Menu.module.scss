@@ -2,7 +2,7 @@
 
 .menu {
   display: block;
-
+ 
   &__content {
     display: none;
     &--active {
@@ -17,12 +17,55 @@
 
     }
 
-    &__links {
+    &__nav {
       display: flex;
-      justify-content: center;
-      margin-top: 100px;
-      color: white;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 70px;
+      color: whitesmoke;
       font-size: 2rem;
+
+      &__title {
+        margin: 0;
+      }
+     
+    }
+
+    &__links {
+      display: flex; 
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.4rem;      
+      list-style-type: none;
+      padding: 0;
+      width: 100%;
+
+      p {
+        display: block;
+        margin: 0;
+        width: 300px;
+      }
+      &__item {
+        display: flex;
+        justify-content: center;
+        padding: 16px;
+        width: 100%;
+        
+        &:hover {
+          background: $blue-dark;
+
+        }
+        a {
+          color: white;
+          text-decoration: none;
+
+          &:hover {
+            color: #ddd;
+          }
+        }
+
+        
+      }
     }
   }
 }
@@ -85,7 +128,6 @@
   top: 20px;
   right: 20px;
   z-index: 1001;
- 
   .hamburger__bars {
     transform: rotate(225deg);
     transition: transform 220ms 120ms ease-in-out;

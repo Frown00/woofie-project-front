@@ -87,8 +87,8 @@ class AddPet extends Component {
             Powrót
           </li>
         </ul>
-        <h2>Dodaj zwierzę</h2>
-        <form onSubmit={this.onSubmit}>
+        <form styleName="add-pet__form" onSubmit={this.onSubmit}>
+          <h2>Dodaj zwierzę</h2>
           <ImageEdit
             pet
             imageSrc={this.state.image}
@@ -113,6 +113,7 @@ class AddPet extends Component {
           />
           <SelectField
             select="Wybierz gatunek"
+            noOptions="Brak gatunków"
             options={options}
             onChange={this.changeSelectedValue} />
           <InputField
