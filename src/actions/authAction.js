@@ -61,6 +61,16 @@ export const setCurrentUser = (decoded) => {
   }
 }
 
+// Update user data
+export const updateUserData = () => dispatch => {
+  const token = localStorage.getItem('oauthToken');
+  setAuthToken(token);
+  axios.get('http://localhost:8080/api/users/me')
+    .then((res) => {
+      dispatch(setCurrentUser(res.data))
+    });
+}
+
 // Log user out
 export const logoutUser = (history) => dispatch => {
   // Remove token from localStorage

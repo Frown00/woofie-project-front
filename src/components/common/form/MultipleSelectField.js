@@ -10,13 +10,20 @@ class MultipleSelectField extends Component {
     this.state = {
       selectedValue: '',
       addedItems: [],
-      options: ['Azor', 'Pimpek']
+      options: []
     }
 
     this.addToList = this.addToList.bind(this);
     this.removeFromList = this.removeFromList = this.removeFromList.bind(this);
     this.changeSelectedValue = this.changeSelectedValue.bind(this);
 
+  }
+
+  componentDidMount() {
+    console.log(this.props.options);
+    this.setState({
+      options: this.props.options
+    })
   }
 
   addToList() {
@@ -86,7 +93,9 @@ class MultipleSelectField extends Component {
               noOptions={this.props.noOptions}
               options={this.state.options}
               onChange={this.changeSelectedValue}
-              addToList={this.addToList} />
+              addToList={this.addToList}
+              isMultiple={true}
+            />
           </div>
           {/* <button styleName="form__container__select-container__button" onClick={this.addToList}>+</button> */}
         </div>

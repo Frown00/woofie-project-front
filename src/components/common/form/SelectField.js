@@ -32,7 +32,7 @@ class SelectField extends Component {
     const optionVal = e.target.innerHTML;
     this.setState({
       isOptionsOn: false,
-      selectValue: this.props.select
+      selectValue: this.props.isMultiple === true ? this.props.select : optionVal
     });
     this.props.onChange(optionVal);
     console.log(optionVal);
@@ -72,13 +72,15 @@ SelectField.propTypes = {
   select: PropTypes.string,
   noOptions: PropTypes.string,
   options: PropTypes.array,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  isMultiple: PropTypes.bool
 };
 
 SelectField.defaultProps = {
   select: "Wybierz",
   noOptions: "Brak opcji wyboru",
-  options: []
+  options: [],
+  isMultiple: false
 };
 
 export default CSSModules(SelectField, styles, { allowMultiple: true });

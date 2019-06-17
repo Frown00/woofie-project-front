@@ -43,7 +43,7 @@ class TextareaField extends Component {
       e.target.scrollTop = e.target.scrollHeight;
     }
 
-    // this.props.onChange(e.target.value);
+    this.props.onChange(e);
     this.setState((prevState) => ({
       rows: currentRows < prevState.maxRows ? currentRows : prevState.maxRows
     }

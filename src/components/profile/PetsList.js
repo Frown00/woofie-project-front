@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ProfileNavbar from './ProfileNavbar';
 import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import CSSModules from 'react-css-modules';
 import styles from './PetsList.module.scss';
 import { users } from '../mockup_data';
@@ -18,7 +20,7 @@ class PetsList extends Component {
 
 
   render() {
-    const { pets } = users[0];
+    const pets = this.props.oauth.user.petList;
     let petList = '';
     if (pets.length === 0) {
       petList = <div>Nie masz żadnego dodanego zwierzęcia</div>
@@ -56,4 +58,11 @@ class PetsList extends Component {
   }
 }
 
-export default withRouter(CSSModules(PetsList, styles, { allowMultiple: true }));
+const mapStateToProps = (state) => ({
+  oauth: state.oauth,
+})
+
+export default connect(mapStateToProps)
+  (
+    withRouter(CSSModules(PetsList, styles, { allowMultiple: true }))
+  )
