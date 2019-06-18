@@ -9,14 +9,17 @@ import InputField from '../common/form/InputField';
 import MultipleSelectField from '../common/form/MultipleSelectField';
 import TextAreaField from '../common/form/TextareaField';
 import isEmpty from '../../validation/isEmpty';
+import axios from 'axios';
+import setAuthToken from '../../utils/setAuthToken';
+
 
 class AddNoticeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       step: 1,
-      dateFrom: '',
-      dateTo: '',
+      datetimeFrom: '',
+      datetimeTo: '',
       reward: '',
       pets: [],
       remarks: '',
@@ -26,8 +29,11 @@ class AddNoticeForm extends Component {
     this.reset = this.reset.bind(this);
 
     this.onChangeValue = this.onChangeValue.bind(this);
+    this.onChecked = this.onChecked.bind(this);
+    this.addPetToAnnouncement = this.addPetToAnnouncement.bind(this);
     this.addAnnouncement = this.addAnnouncement.bind(this);
   }
+
 
   reset() {
     this.setState({
@@ -43,24 +49,77 @@ class AddNoticeForm extends Component {
   }
 
   onChangeValue(e) {
-    console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });
   }
 
+  onChecked(e) {
+    this.setState({
+      [e.target.name]: e.target.checked
+    })
+  }
+
+  addPetToAnnouncement(petName) {
+    const { petList } = this.props.oauth.user;
+
+    const petId = petList.filter((pet) => pet.name === petName)[0].id
+    let currentPets = this.state.pets;
+    currentPets.push(petId);
+    this.setState({
+      pets: currentPets
+    })
+  }
+
+  removePetFromAnnouncement(petName) {
+    const { petList } = this.props.oauth.user;
+    const petId = petList.filter((pet) => pet.name === petName)[0].id
+    let currentPets = this.state.pets;
+    currentPets = currentPets.filter((pet) => pet.id !== petId);
+
+    this.setState({
+      pets: currentPets
+    })
+  }
+
   addAnnouncement(e) {
     e.preventDefault();
-    console.log(this.state);
+    const user = this.props.oauth.user;
+
+    const announcementData =
+    {
+      "city": user.city,
+      "dateFrom": this.state.datetimeFrom,
+      "dateTo": this.state.datetimeTo,
+      "issueDate": Date.now(),
+      "endDate": null,
+      "petsId": this.state.pets,
+      "userId": user.id,
+      "details": this.state.details
+    };
+
+    console.log(announcementData);
+
+    setAuthToken(localStorage.getItem("oauthToken"))
+    axios.post(
+      'http://localhost:8080/api/announcements/create',
+      announcementData
+    )
+      .then((res) => {
+
+      })
+      .catch((err) => {
+
+      })
   }
 
   render() {
 
     let form = <h3>Loading...</h3>
     let petOptions = this.props.oauth.user.petList.map((pet) => pet.name);
-    console.log(petOptions);
+
     if (isEmpty(petOptions)) {
-      console.log("Empty");
+      console.log("Musisz mieć przynajmniej jedno zwierzę");
     }
     else {
       switch (this.state.step) {
@@ -72,7 +131,10 @@ class AddNoticeForm extends Component {
                 options={petOptions}
                 noOptions="Brak zwierząt do dodania"
                 emptyMsg="Nie dodano żadnego zwierzęcia"
-                listTitle="Zwierzęta do opieki" />
+                listTitle="Zwierzęta do opieki"
+                onAddItem={this.addPetToAnnouncement}
+                onRemoveItem={this.removePetFromAnnouncement}
+              />
               <TextAreaField
                 minRows={3}
                 maxRows={10}
@@ -96,14 +158,14 @@ class AddNoticeForm extends Component {
                 <div styleName="form__keeping__date">
                   <InputField
                     label="Data od"
-                    name="datetime-from"
+                    name="datetimeFrom"
                     type="datetime-local"
                     placeholder="Od"
                     onChange={this.onChangeValue}
                   />
                   <InputField
                     label="Data do"
-                    name="datetime-to"
+                    name="datetimeTo"
                     type="datetime-local"
                     placeholder="Do"
                     onChange={this.onChangeValue}
@@ -123,7 +185,7 @@ class AddNoticeForm extends Component {
                   <CheckboxField
                     name="isRewardMayChanged"
                     label="Do uzgodnienia"
-                    onChange={this.onChangeValue}
+                    onChange={this.onChecked}
                   />
                 </div>
               </div>

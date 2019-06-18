@@ -16,7 +16,6 @@ class MultipleSelectField extends Component {
     this.addToList = this.addToList.bind(this);
     this.removeFromList = this.removeFromList = this.removeFromList.bind(this);
     this.changeSelectedValue = this.changeSelectedValue.bind(this);
-
   }
 
   componentDidMount() {
@@ -30,6 +29,7 @@ class MultipleSelectField extends Component {
     if (this.state.selectedValue !== '') {
       const items = this.state.addedItems;
       items.push(this.state.selectedValue);
+      this.props.onAddItem(this.state.selectedValue);
       let options = this.state.options;
       options = options.filter((name) => name !== this.state.selectedValue);
       this.setState({
@@ -47,10 +47,11 @@ class MultipleSelectField extends Component {
     const optionToRemove = e.currentTarget.parentNode.children[0].innerHTML;
     let items = this.state.addedItems;
     items = items.filter(el => el !== optionToRemove);
+    this.props.onRemoveItem(optionToRemove);
+
     let options = this.state.options;
 
     options.push(optionToRemove);
-    console.log(options);
 
     this.setState({
       addedItems: items,

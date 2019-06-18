@@ -35,7 +35,6 @@ class SelectField extends Component {
       selectValue: this.props.isMultiple === true ? this.props.select : optionVal
     });
     this.props.onChange(optionVal);
-    console.log(optionVal);
   }
 
   render() {

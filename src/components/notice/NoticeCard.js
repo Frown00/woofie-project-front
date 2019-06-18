@@ -12,6 +12,11 @@ import Prompt from '../common/Prompt';
 import DateTimeLine from '../common/DateTimeLine';
 import Badge from '../common/Badge';
 
+import defaultDog from '../../img/images/default_dog.png';
+import defaultCat from '../../img/images/default_cat.png';
+import defaultHamster from '../../img/images/default_hamster.png';
+import defaultPet from '../../img/images/default_pet.png';
+
 moment.locale('pl');
 
 function getPetNames(pets) {
@@ -50,24 +55,37 @@ class NoticeCard extends Component {
   render() {
     let backgroundImage;
     const notice = this.props.notice;
-    const owner = this.props.notice.owner;
-    const pets = this.props.notice.pets;
-    const petNames = getPetNames(this.props.notice.pets);
-    console.log(petNames);
-    const image = this.props.notice.pets[0].image;
-    if (image) {
-      backgroundImage = {
-        backgroundImage: `url(${image}`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center'
+    const owner = this.props.notice["user"];
+    const pets = this.props.notice["petsList"];
+    console.log(pets);
+
+    const petNames = getPetNames(pets);
+    let image;
+    if (pets[0].image === undefined || pets[0].image === null) {
+      switch (pets[0].speciesName) {
+        case "Pies": image = defaultDog; break;
+        case "Kot": image = defaultCat; break;
+        case "Chomik": image = defaultHamster; break;
+        default: image = defaultPet;
       }
     }
     else {
-      backgroundImage = {
-        background: 'whitesmoke'
-      }
+      image = pets[0].image
     }
+    console.log(image);
+    // if (image) {
+    //   backgroundImage = {
+    //     backgroundImage: `url(${image}`,
+    //     backgroundSize: 'cover',
+    //     backgroundRepeat: 'no-repeat',
+    //     backgroundPosition: 'center'
+    //   }
+    // }
+    // else {
+    //   backgroundImage = {
+    //     background: 'whitesmoke'
+    //   }
+    // }
 
     return (
       <div styleName="notice">
@@ -82,15 +100,15 @@ class NoticeCard extends Component {
           <div styleName="notice__who__pet">
             <p styleName="notice__who__pet__name">
               {petNames}
-              <Badge isPet={true} rating={pets[0].rating} />
+              <Badge isPet={true} rating={3.9} />
             </p>
 
           </div>
           <div styleName="notice__who__owner">
             <p styleName="notice__who__owner__title">Wystawiający</p>
             <p styleName="notice__who__owner__name">
-              {owner.name}
-              <Badge rating={owner.rating} />
+              {owner.username}
+              <Badge rating={4.2} />
             </p>
           </div>
         </div>
@@ -113,7 +131,7 @@ class NoticeCard extends Component {
               <p styleName="notice__details__info__location__title">
                 Miejsce:
                 <span styleName="notice__details__info__location__city">{notice.city},</span>
-                <span styleName="notice__details__info__location__street">ul.{notice.street}</span>
+                <span styleName="notice__details__info__location__street">ul.Warszawska</span>
               </p>
             </div>
             <hr styleName="notice__details__selector" />
@@ -123,7 +141,7 @@ class NoticeCard extends Component {
             <div styleName="notice__details__info__reward">
               <p styleName="notice__details__info__reward__title">
                 Wynagrodzenie:
-              <span styleName="notice__details__info__reward__amount">{notice.reward}zł</span>
+              <span styleName="notice__details__info__reward__amount">300zł</span>
               </p>
             </div>
             <Link to={`${this.props.match.url}/${this.props.notice.id}`}>

@@ -9,7 +9,12 @@ class CheckboxField extends Component {
       <div styleName="checkbox">
         <label styleName="checkbox__label" htmlFor={this.props.name}>{this.props.label}</label>
         <div styleName="checkbox__box-container">
-          <input styleName="checkbox__box-container__box" name={this.props.name} type={this.props.type} />
+          <input
+            styleName="checkbox__box-container__box"
+            name={this.props.name}
+            type={this.props.type}
+            onChange={this.props.onChange}
+          />
         </div>
       </div>
     )

@@ -12,6 +12,7 @@ import TimeLine from '../common/TimeLine';
 import moment from 'moment';
 import 'moment/locale/pl';
 import NoticeApplyButtons from './NoticeApplyButtons';
+import axios from 'axios';
 
 const subNavbarLinks = [
   {
@@ -37,19 +38,19 @@ class NoticeMoreInfo extends Component {
     }
   }
   componentDidMount() {
-    const notice = notices.filter((notice) => notice.id === this.props.match.params.id)[0];
-    console.log(notice);
-    this.setState({
-      city: notice.city,
-      keepingDateFrom: notice.keepingDateFrom,
-      keepingDateTo: notice.keepingDateTo,
-      owner: notice.owner,
-      pets: notice.pets,
-      remarks: notice.remarks,
-      reward: notice.reward,
-      status: notice.status,
-      street: notice.street
-    })
+    axios.get(`/api/announcements/${this.props.match.params.id}`)
+      .then((res) => {
+        console.log(res.data);
+
+        this.setState({
+          city: res.data.city,
+          keepingDateFrom: res.data.dateFrom,
+          keepingDateTo: res.data.dateTo,
+          remarks: res.data.details,
+
+        })
+      })
+
   }
   render() {
     const {
