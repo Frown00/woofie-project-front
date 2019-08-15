@@ -1,18 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Person from './Person';
 
 import CSSModules from 'react-css-modules';
-import styles from './ConversationList.module.scss';
+import styles from './PersonList.module.scss';
 
-function ConversationList(props) {
+function PersonList(props) {
 
   const conversationList =
-    <ul styleName="conversation-list">
+    <ul styleName="person-list">
       {
         props.conversations.map((conversation, key) => {
           return (
-            <Link to="#" key={key} styleName="conversation-list__item">
+            <Link to={`${props.match.url}/conversations/${conversation.conversation.id}`} key={key} styleName="person-list__item">
               <li>
                 <Person conversation={conversation} />
               </li>
@@ -29,4 +29,4 @@ function ConversationList(props) {
   )
 }
 
-export default CSSModules(ConversationList, styles);
+export default CSSModules(PersonList, styles);

@@ -6,6 +6,7 @@ import RatingsPage from './RatingsPage';
 import ApplicationList from './ApplicationList';
 import EditProfile from './EditProfile';
 import PetsList from './PetsList';
+import AddPet from './AddPet';
 import { users, applications } from '../mockup_data';
 
 const subNavbarLinks = [
@@ -19,6 +20,17 @@ const subNavbarLinks = [
   },
 ]
 
+const editProfile = [
+  {
+    to: 'BACK',
+    title: 'Powrót'
+  },
+  {
+    to: '/pets',
+    title: 'Zwierzęta'
+  },
+]
+
 
 export default class ProfilePage extends Component {
 
@@ -27,30 +39,36 @@ export default class ProfilePage extends Component {
   }
 
   render() {
-    console.log(this.props.match.url);
     return (
       <div>
-        <SubNavbar links={subNavbarLinks} match={this.props.match} />
 
         <Route
           exact path={`${this.props.match.url}`}
-          component={() => <ApplicationList match={this.props.match} applications={applications} />}
+          component={() => <ApplicationList match={this.props.match} applications={applications} subNavbarLinks={subNavbarLinks} />}
         />
         <Route
           path={`${this.props.match.url}/applications`}
-          component={() => <ApplicationList match={this.props.match} applications={applications} />}
+          component={() => <ApplicationList applications={applications} match={this.props.match} subNavbarLinks={subNavbarLinks} />}
         />
         <Route
           path={`${this.props.match.url}/ratings`}
-          component={() => <RatingsPage match={this.props.match} profile={users[0]} />}
+          component={() => <RatingsPage profile={users[0]} match={this.props.match} subNavbarLinks={subNavbarLinks} />}
         />
         <Route
-          path={`${this.props.match.url}/profile/edit`}
-          component={() => <EditProfile profile={users[0]} />}
+          exact path={`${this.props.match.url}/profile/edit`}
+          component={() => <EditProfile profile={users[0]} match={this.props.match} />}
         />
         <Route
-          path={`${this.props.match.url}/profile/pets`}
-          component={() => <PetsList profile={users[0]} />}
+          exact path={`${this.props.match.url}/profile/edit/pets`}
+          component={() => <PetsList profile={users[0]} match={this.props.match} />}
+        />
+        <Route
+          exact path={`${this.props.match.url}/profile/pets`}
+          component={() => <PetsList profile={users[0]} match={this.props.match} />}
+        />
+        <Route
+          exact path={`${this.props.match.url}/profile/pets/add`}
+          component={() => <AddPet profile={users[0]} match={this.props.match} />}
         />
       </div>
     )

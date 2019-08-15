@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import InputField from '../common/form/InputField';
 import ImageEdit from '../common/form/ImageEdit';
+import ProfileNavbar from './ProfileNavbar';
 
 import CSSModules from 'react-css-modules';
 import styles from './EditProfile.module.scss';
@@ -40,11 +41,9 @@ class EditProfile extends Component {
   }
 
   onChangeValue(e) {
-    console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });
-    console.log(this.state);
 
   }
 
@@ -56,9 +55,10 @@ class EditProfile extends Component {
 
   render() {
     return (
-      <div>
+      <div styleName="edit-profile">
+        <ProfileNavbar match={this.props.match} />
         <h2>Edycja profilu</h2>
-        <form>
+        <form styleName="edit-profile__form">
           <ImageEdit
             imageSrc={this.state.avatar}
             imageAlt="Avatar"
@@ -112,7 +112,7 @@ class EditProfile extends Component {
             value={this.state.phoneNumber}
             onChange={this.onChangeValue}
           />
-          <input className="button button-primary" styleName="form__submit" type="submit" value="Edytuj" />
+          <input className="button button-primary" styleName="edit-profile__form__submit" type="submit" value="Edytuj" />
         </form>
 
       </div>

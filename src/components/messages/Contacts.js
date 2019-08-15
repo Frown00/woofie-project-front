@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
-import ConversationList from './ConversationList';
+import PersonList from './PersonList';
 import { contacts } from '../mockup_data';
+import CSSModules from 'react-css-modules';
+import styles from './Contacts.module.scss';
 
-export default class Contacts extends Component {
+class Contacts extends Component {
   render() {
     return (
-      <div>
+      <div styleName="contacts">
         <h2>Kontakty</h2>
-        <ConversationList conversations={contacts} />
+        <PersonList conversations={contacts} match={this.props.match} />
       </div>
     )
   }
 }
+
+export default CSSModules(Contacts, styles);

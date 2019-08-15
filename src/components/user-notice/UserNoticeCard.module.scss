@@ -1,0 +1,86 @@
+@import "../common_styles/variables/colors.scss";
+
+.user-notice {
+  display: block;
+  position: relative;
+  margin-bottom: 50px;
+  a {
+    text-decoration: none;
+  }
+  &__info {
+    position: relative;
+    display: block;
+    background: $yellow-normal;
+    padding: 10px 20px;
+    border-radius: 20px 20px 0 0;
+
+    &__pets {
+      display: block;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    &__status {
+      display: block;
+      font-weight: 700;
+      margin: 0;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    &__published {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      p {
+        margin: 0;
+        font-size: 0.7rem;
+      }
+    }
+
+    &__manage-button {
+      display: inline-block;
+      text-align: center;
+      position: absolute;
+      bottom: -38px;
+      right: 0;
+      color: white;
+      text-decoration: none;
+      width: 40%;
+      background: #333;
+      border-radius: 0 0 0 20px;
+      padding: 10px;
+    }
+  }
+
+  &__controls {
+    display: block;
+    &__applications, &__details {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      background: $blue-normal;
+      border-radius: 0 0 20px 20px;
+
+      &__number {
+        display: inline-block;
+        position: relative;
+        top: -5px;
+        font-weight: 500;
+        font-size: 0.7rem;
+        padding: 3px 7px;
+        border-radius: 7px;
+        background: $red-bright;
+        border: 1px solid $red-dark;
+
+      }
+    }
+
+    &__details {
+      background: #333;
+    }
+  }
+}

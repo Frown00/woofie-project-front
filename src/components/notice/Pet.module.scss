@@ -1,0 +1,21 @@
+.pet {
+  display: block;
+  font-size: 0.9rem;
+  &__image {
+    border-radius: 25px;
+    border: 1px solid #e3e3e3;
+    overflow: hidden;
+  }
+
+  &__name {
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  &__breed {
+    font-size: 0.8rem;
+    margin: 0;
+    font-weight: 300;
+  }
+}

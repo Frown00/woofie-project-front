@@ -1,0 +1,78 @@
+@import '../common_styles/variables/colors.scss';
+
+.announcement-manage {
+  display: block;
+  font-size: 0.9rem;
+  max-width: 800px;
+  margin: 0 auto;
+  &__buttons {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+  }
+
+  &__edit-button, &__delete-button {
+    display: block;
+    outline: none;
+    border: 0;
+    padding: 10px 15px;
+    width: 120px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+  }
+
+  &__edit-button {
+    background: $blue-bright;
+    color: white; 
+
+    &:hover {
+      background: $blue-normal;
+    }
+  }
+
+  &__delete-button {
+    background: $red-bright;
+    color: white;
+
+    &:hover {
+      background: $red-normal;
+    }
+  }
+
+  &__image {
+    display: block;
+
+  }
+
+  &__name {
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__breed {
+    margin: 10px 0 0 0;
+    font-size: 0.8rem;
+  }
+
+  &__info {
+    max-width: 800px;
+  }
+
+  &__datetime {
+    max-width: 400px;
+  }
+
+  &__keeping {
+    display: block;
+    padding-bottom: 10px;
+    margin: 20px 0 10px 0;
+    font-weight: 700;
+    border-bottom: 1px solid #d3d3d3;
+  }
+
+  &__description {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+}

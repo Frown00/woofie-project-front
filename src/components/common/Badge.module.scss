@@ -1,0 +1,17 @@
+@import '../common_styles/variables/colors.scss';
+
+.rating {
+  background: #333;
+  color: white;
+  border: 2px solid $yellow-dark;
+  font-weight: 700;
+  padding: 0.1rem 0.7rem;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+.rating_pet {
+  color: #333;
+  background: whitesmoke;
+  
+}

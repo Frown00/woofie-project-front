@@ -1,0 +1,112 @@
+@import "../common_styles/variables/colors.scss";
+
+.owner-info {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__owner-button {
+    background: $red-bright;
+    text-align: center;
+    border: 0;
+    outline: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    width: 200px;
+    cursor: pointer;
+  }
+
+  &__selector {
+    border: 0;
+    height: 1px;
+    background: #e3e3e3;
+  }
+
+  &__container {
+    display: flex;
+    font-size: 0.9rem;
+    &__image {
+      background: whitesmoke;
+      border: 2px solid #f3f3f3;
+      border-radius: 25px;
+      margin: 0 20px 0 0;
+      overflow: hidden;
+      align-self: flex-start;
+    }
+
+    &__header {
+      display: block;
+      margin-top: 10px;
+      &__name {
+        display: block;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      &__place-title {
+        display: block;
+        font-weight: 600;
+        margin: 0;
+        margin-top: 10px;
+        font-size: 0.8rem;
+      }
+
+      &__place {
+        display: block;
+        font-size: 0.8rem;
+        margin: 0;
+        margin-top: 5px;
+        font-weight: 300;
+      }
+
+      &__rating-container {
+        margin-top: 15px;
+        font-size: 0.8rem;
+          &__rating {
+            background: #333;
+            color: white;
+            border: 2px solid $yellow-dark;
+            font-weight: 700;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+          }
+
+          &__count {
+            margin-left: 20px;
+          }
+      }
+    }
+  }
+
+  &__pets {
+    display: block;
+    margin-top: 20px;
+    &__title {
+      display: block;
+      font-weight: 700;
+
+    }
+    &__content {
+      display: block;
+
+    }
+  }
+
+  &__comments {
+    display: block;
+    margin-top: 50px;
+
+    &__title {
+      display: block;
+      font-weight: 700;
+    }
+
+    &__content {
+      display: block;
+      max-width: 400px;
+    }
+  }
+}

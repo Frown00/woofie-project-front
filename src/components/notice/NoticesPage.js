@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import SubNavbar from '../common/SubNavbar';
 
 import AddNoticeForm from './AddNoticeForm';
-import UserNotices from './UserNotices';
+import UserNotices from '../user-notice/UserNotices';
+import ManageUserNotice from '../user-notice/ManageUserNotice';
+import NoticeApplicationList from '../user-notice/NoticeApplicationList';
 
 const subNavbarLinks = [
   {
@@ -16,13 +18,12 @@ const subNavbarLinks = [
   },
 ];
 
-export default class NoticesPage extends Component {
+class NoticesPage extends Component {
   redirect = () => {
     this.props.history.push(`${this.props.match.url}/messages`);
   }
 
   render() {
-    console.log(this.props.match.url);
     return (
       <div>
         <SubNavbar links={subNavbarLinks} match={this.props.match} />
@@ -35,10 +36,20 @@ export default class NoticesPage extends Component {
           component={AddNoticeForm}
         />
         <Route
-          path={`${this.props.match.url}/published`}
-          component={UserNotices}
+          exact path={`${this.props.match.url}/published`}
+          component={() => <UserNotices match={this.props.match} />}
+        />
+        <Route
+          path={`${this.props.match.url}/published/:id/manage`}
+          component={() => <ManageUserNotice match={this.props.match} />}
+        />
+        <Route
+          path={`${this.props.match.url}/published/:id/applications`}
+          component={() => <NoticeApplicationList match={this.props.match} />}
         />
       </div>
     )
   }
 }
+
+export default NoticesPage;

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+import checkToken from './utils/checkToken';
 import 'normalize.css';
 
 import CSSModules from 'react-css-modules';
 import styles from './App.module.scss';
 
 import store from './store';
+import PrivateRoute from './components/common/PrivateRoute';
 
 import Header from './components/layout/Header';
 import Navbar from './components/layout/Navbar';
@@ -19,8 +21,10 @@ import accountIcon from './img/icons/account.png';
 import MessagesPage from './components/messages/MessagesPage';
 import NoticesPage from './components/notice/NoticesPage';
 import ProfilePage from './components/profile/ProfilePage';
-
-
+import NoticeMoreInfo from './components/notice/NoticeMoreInfo';
+import NoticeLandingPage from './components/notice-landing/NoticeLandingPage';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 
 const navLinkList = [
   {
@@ -29,9 +33,9 @@ const navLinkList = [
     text: "Wiadomości"
   },
   {
-    to: "/notices",
+    to: "/my-announcements",
     icon: noticeIcon,
-    text: "Dodaj ogłoszenie"
+    text: "Ogłoszenia"
   },
   {
     to: "/account",
@@ -39,6 +43,8 @@ const navLinkList = [
     text: "Konto"
   }
 ];
+
+checkToken();
 
 class App extends Component {
   render() {
@@ -48,11 +54,15 @@ class App extends Component {
           <Header />
           <div styleName="content">
             <Switch>
-              <Route exact path="/" component={Landing} />
-              <Route path="/communicator" component={MessagesPage} />
-              <Route path="/notices" component={NoticesPage} />
-              <Route path="/account" component={ProfilePage} />
-
+              <Route exact path="/">
+                <Redirect to="/announcements" />
+              </Route>
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route path="/announcements" component={NoticeLandingPage} />
+              <PrivateRoute path="/communicator" component={MessagesPage} />
+              <PrivateRoute path="/my-announcements" component={NoticesPage} />
+              <PrivateRoute path="/account" component={ProfilePage} />
             </Switch>
             <div styleName="navbar-dom-substitute"></div>
 

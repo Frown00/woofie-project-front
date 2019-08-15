@@ -1,37 +1,29 @@
 @import "../common_styles/variables/colors.scss";
 
-.profile {
-  display: block;
+.application-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  &__buttons {
-    font-size: 0.8rem;
-    display: flex;
-    width: 320px;
-    &__edit {
-      display: flex;
-      justify-content: center;
-      height: 40px;      
-      width: 130px;
-      padding: 0.9rem 2rem;
-      border-radius: 10px;
-    }
-    &__pets {
-      padding: 1rem;
-      width: 130px;
-      height: 40px;
-      margin-left: 20px;
-      background: $pet-button;
-      border-radius: 10px;
-      color: white;
-
-      &:hover {
-        background: $pet-button-hover;
-      }
-    }
+.application-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  &__item {
+    margin: 10px 0 10px 0;
   }
+}
 
-  a {
-    text-decoration: none;
+@media only screen and (min-width: 720px) {
+  .application-list {
+    display: grid;
+    grid-template-columns: 320px 320px;
+    grid-column-gap: 50px;
+    align-items: center;
+
   }
 }
 

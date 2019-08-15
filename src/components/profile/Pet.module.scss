@@ -1,0 +1,39 @@
+@import "../common_styles/variables/colors.scss";
+
+.pet {
+  display: block;
+  &__image {
+    display: block;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid #e3e3e3;
+  }
+
+  &__name {
+    display: block;
+    font-weight: 700;
+    margin: 10px 0 5px 10px;
+  }
+
+  &__breed {
+    display: block;
+    margin: 0 0 0px 10px;
+    font-weight: 300;
+  }
+
+  &__edit-button {
+    display: block;
+    margin-top: 20px;
+    outline: none;
+    border: 0;
+    background: $blue-bright;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    width: 100%;
+
+    &:hover {
+      background: $blue-normal;
+    }
+  }
+}

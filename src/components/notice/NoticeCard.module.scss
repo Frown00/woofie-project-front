@@ -1,9 +1,10 @@
 @import "../common_styles/variables/colors.scss";
 
 .notice {
+  position: relative;
   margin-bottom: 70px;
   border-radius: 10px;
-  border: 2px solid gray;
+  border: 2px solid #E3E3E3;
   box-shadow: 5px 10px 10px 0px rgba(224,224,224,1);
   overflow: hidden;
 } 
@@ -12,7 +13,7 @@
   background: $yellow-normal;
   padding: 5px 20px;
   font-size: 0.8rem;
-  &__animal {
+  &__pet {
     display: block;
     &__name {
       display: flex;
@@ -22,15 +23,7 @@
       margin: 0;
     }
 
-    &__rating {
-      background: #333;
-      color: white;
-      border: 2px solid lightgray;
-      font-weight: 700;
-      padding: 0.1rem 0.7rem;
-      margin-left: 10px;
-      border-radius: 20px;
-    }
+   
   }
 
   &__owner {
@@ -50,27 +43,15 @@
       color: black;
       font-weight: 700;
     }
-    &__rating {
-      color: black;
-      background: whitesmoke;
-      border: 2px solid lightgray;
-      font-weight: 700;
-      padding: 0.1rem 0.7rem;
-      margin-left: 10px;
-      border-radius: 15px;
-    }
+    
   }
 }
 
 .notice__details {
   color: black;
   font-size: 0.8rem;
-
-  &__image {
-    width: 300px;
-    height: 200px;
-    background: whitesmoke;
-  }
+  position: relative;
+ 
 
   &__selector {
     height: 1px;
@@ -86,7 +67,7 @@
     width: 100%;
     height: 150px;
     padding: 10px;
-    &__animal {
+    &__pet {
       flex-basis: 100px;
       &__name {
         margin: 0;
@@ -101,22 +82,7 @@
   
       }
     }
-  
-    &__keeping {
-      display: flex;
-      &__title {
-        margin: 0;
-      }
-  
-      &__date-from {
-        margin-top: 10px;
-      }
-  
-      &__date-to {
-        margin-top: 10px;
-      }
-    }
-  
+
     &__location {
       display: flex;
       &__title {
@@ -125,15 +91,23 @@
   
       &__city {
         margin-top: 10px;
+        margin-left: 10px;
+        font-weight: 700;
       }
   
       &__street {
         margin-top: 10px;
+        margin-left: 5px;
+        font-weight: 700;
       }
     }
   
+  
+    
     &__reward {
-      display: flex;      
+      display: flex;  
+      align-items: center;
+      height: 50px;    
       &__title {
         margin: 0;
         text-align: center;
@@ -141,10 +115,22 @@
       &__amount {
         font-size: 16px;
         margin-top: 20px;
+        margin-left: 10px;
         font-weight: bold;
         text-align: center;
       }
     }
+
+    &__more-info-button {
+      color: black;
+      position: absolute;
+      bottom: 57px;
+      right: 10px;
+      background: $yellow-normal;
+      padding: 0.7em 1.5em;
+      border-radius: 25px;
+    }
+
     &__button-submit {
       width: 100%;
       height: 40px;

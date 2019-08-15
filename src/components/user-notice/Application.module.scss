@@ -1,0 +1,74 @@
+@import '../common_styles/variables/colors.scss';
+
+.application {
+  border: 1px solid #e3e3e3;
+  border-radius: 25px;
+  overflow: hidden;
+  max-width: 400px;
+  &__name {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: 700;
+  }
+
+  &__city {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  &__image {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 25px 0 25px 0;
+    overflow: hidden;
+  }
+
+  &__buttons {
+    display: flex;
+    clear: both;
+  }
+
+  &__accept-button, &__decline-button {
+    border: 0;
+    flex: 1;
+    padding: 10px 15px;
+    color: white;
+  }
+
+  &__accept-button {
+    background: $blue-normal;
+  }
+
+  &__decline-button {
+    background: $red-bright;
+  }
+
+  &__rating {
+    display: flex;
+    margin-top: 10px;
+    &__container {
+      display: block;
+      margin-left: 20px;
+    }
+
+    &__title {
+      margin: 0;
+    }
+
+
+    &__quantity {
+      color: #333;
+      font-weight: 300;
+      margin: 0;
+      margin-top: 10px;
+      margin-left: 10px;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+}

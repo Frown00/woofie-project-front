@@ -1,0 +1,53 @@
+@import "../common_styles/variables/colors.scss";
+
+.conversation {
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__send-message {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+.message-list {
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
+  background: #f3f3f3;
+  border: 1px solid #e3e3e3;
+  padding: 20px;
+  border-top: 1px solid #a3a3a3;
+  height: 50vh;
+  overflow: scroll;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  &__image {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__info {
+    margin-left: 20px;
+  }
+}
+
+.send-button {
+  width: 100%;
+  background: $blue-bright;
+  outline: none;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 0 0 10px 10px;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.message {
+  border-radius: 0;
+  background: black;
+}

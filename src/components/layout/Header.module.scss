@@ -5,6 +5,7 @@
   position: relative;
   height: 100px;
   overflow: hidden;
+  margin-bottom: 70px;
 }
 
 .header__background {
@@ -34,3 +35,51 @@
   top: 0px;
 }
 
+.header__login, .header__logout {
+  position: absolute;
+  right: 100px;
+  top: 15px;
+  color: white;
+  border: 1px solid $blue-dark;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+.header__login:hover {
+  background: $blue-dark;
+}
+
+.header__logout:hover {
+  background: $red-dark;
+}
+
+@media only screen and (min-width: 600px)  {
+  .header__background {
+    transform: skewY(-3deg);
+  }
+}
+@media only screen and (min-width: 800px)  {
+  .header__background {
+    transform: skewY(-2deg);
+  }
+}
+
+@media only screen and (min-width: 1200px)  {
+  .header__background {
+    transform: skewY(-1.5deg);
+  }
+}
+
+@media only screen and (min-width: 1600px)  {
+  .header__background {
+    transform: skewY(-1deg);
+  }
+}
+
+@media only screen and (min-width: 2000px)  {
+  .header__background {
+    transform: skewY(-0.7deg);
+  }
+}

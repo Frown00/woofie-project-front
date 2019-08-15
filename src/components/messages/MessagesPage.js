@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Route, Link, Redirect } from 'react-router-dom';
+import { Route, Link, Redirect, withRouter } from 'react-router-dom';
 import SubNavbar from '../common/SubNavbar';
 import Messages from './Messages';
 import Contacts from './Contacts';
+import Conversation from './Conversation';
 
 const subNavbarLinks = [
   {
@@ -16,14 +17,14 @@ const subNavbarLinks = [
 ]
 
 
-export default class MessagesPage extends Component {
+class MessagesPage extends Component {
 
   redirect = () => {
     this.props.history.push(`${this.props.match.url}/messages`);
   }
 
+
   render() {
-    console.log(this.props.match.url);
     return (
       <div>
         <SubNavbar links={subNavbarLinks} match={this.props.match} />
@@ -33,13 +34,19 @@ export default class MessagesPage extends Component {
         />
         <Route
           path={`${this.props.match.url}/messages`}
-          component={Messages}
+          component={() => <Messages match={this.props.match} />}
         />
         <Route
           path={`${this.props.match.url}/contacts`}
-          component={Contacts}
+          component={() => <Contacts match={this.props.match} />}
+        />
+        <Route
+          path={`${this.props.match.url}/conversations/:id`}
+          component={() => <Conversation match={this.props.match} />}
         />
       </div>
     )
   }
 }
+
+export default MessagesPage;

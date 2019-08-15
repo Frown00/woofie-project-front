@@ -1,0 +1,25 @@
+@import "../common_styles/variables/colors.scss";
+
+.register {
+  margin: 0 auto;
+  max-width: 400px;
+
+  &__form {
+    margin-top: 50px;
+
+    &__submit {
+      background: $blue-normal;
+      outline: none;      
+      border: 0;
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px 10px;
+      border-radius: 25px;
+      color: white;
+
+      &:hover {
+        background: $blue-dark;
+      }
+    }
+  }
+}

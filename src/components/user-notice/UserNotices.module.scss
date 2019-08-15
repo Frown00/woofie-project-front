@@ -1,0 +1,19 @@
+.user-notices {
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    &__item {
+      display: block;
+      margin: 0 auto;
+      margin-left: 20px;
+    }
+  }
+}
