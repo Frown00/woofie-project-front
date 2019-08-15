@@ -27,18 +27,18 @@ class NoticeMoreInfoOwner extends Component {
   }
 
   componentDidMount() {
-    const notice = notices.filter((notice) => notice.id === this.props.match.params.id)[0];
-    const owner = notice.owner;
-    console.log(notice);
-    this.setState({
-      name: owner.name,
-      city: owner.city,
-      rating: owner.rating,
-      allRatings: owner.allRatings,
-      pets: owner.pets,
-      avatar: owner.avatar,
-      birthDate: owner.birthDate
-    });
+    // const notice = notices.filter((notice) => notice.id === this.props.match.params.id)[0];
+    // const owner = notice.owner;
+    // console.log(notice);
+    // this.setState({
+    //   name: owner.name,
+    //   city: owner.city,
+    //   rating: owner.rating,
+    //   allRatings: owner.allRatings,
+    //   pets: owner.pets,
+    //   avatar: owner.avatar,
+    //   birthDate: owner.birthDate
+    // });
   }
 
   goBack() {

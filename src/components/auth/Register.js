@@ -1,18 +1,27 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Redirect, Route, withRouter } from 'react-router-dom';
 import InputField from '../common/form/InputField';
 import CSSModules from 'react-css-modules';
 import styles from './Register.module.scss';
+import axios from 'axios';
 
-class Login extends Component {
+class Register extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      login: '',
+      username: '',
       password: '',
-      confirmedPassword: ''
+      confirmedPassword: '',
+      email: '',
+      birthDate: '',
+      city: '',
+      street: '',
+      buildingNumber: '',
+      phoneNumber: ''
     }
     this.onChangeValue = this.onChangeValue.bind(this);
+    this.registerUser = this.registerUser.bind(this);
   }
 
   onChangeValue(e) {
@@ -21,22 +30,48 @@ class Login extends Component {
     });
   }
 
+  registerUser(e) {
+    e.preventDefault();
+    axios.post(
+      'http://localhost:8080/users/registration',
+      {
+        username: this.state.username,
+        password: this.state.password,
+        email: this.state.email,
+        birthDate: this.state.birthDate,
+        city: this.state.city,
+        street: this.state.street,
+        buildingNumber: this.state.buildingNumber,
+        phoneNumber: this.state.phoneNumber,
+      }
+    )
+      .then(res => {
+        console.log("User registered");
+        this.props.history.push("/login");
+      }
+
+
+      )
+      .catch(error => {
+        console.log(error.response)
+      })
+  }
 
   render() {
     return (
       <div styleName="register">
         <h2>Rejestracja</h2>
-        <div styleName="register__form">
+        <form onSubmit={this.registerUser} styleName="register__form">
           <InputField
-            name="login"
-            type="email"
-            label="Login"
+            name="username"
+            type="name"
+            label="Twoja nazwa *"
             onChange={this.onChangeValue}
           />
           <InputField
             name="password"
             type="password"
-            label="Hasło"
+            label="Hasło *"
             onChange={this.onChangeValue}
           />
           <InputField
@@ -45,13 +80,48 @@ class Login extends Component {
             label="Potwierdź hasło"
             onChange={this.onChangeValue}
           />
+          <InputField
+            name="email"
+            type="email"
+            label="Email *"
+            onChange={this.onChangeValue}
+          />
+          <InputField
+            name="birthDate"
+            type="date"
+            label="Dzień urodzenia *"
+            onChange={this.onChangeValue}
+          />
+          <InputField
+            name="city"
+            type="text"
+            label="Miasto *"
+            onChange={this.onChangeValue}
+          />
+          <InputField
+            name="street"
+            type="text"
+            label="Nazwa ulicy"
+            onChange={this.onChangeValue}
+          />
+          <InputField
+            name="buildingNumber"
+            type="text"
+            label="Numer budynku"
+            onChange={this.onChangeValue}
+          />
+          <InputField
+            name="phoneNumber"
+            type="tel"
+            label="Numer telefonu"
+            onChange={this.onChangeValue}
+          />
           <input styleName="register__form__submit" type="submit" value="Zarejestruj się" />
-        </div>
+        </form>
 
       </div>
     )
   }
-
 }
 
-export default CSSModules(Login, styles);
+export default withRouter(CSSModules(Register, styles));

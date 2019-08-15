@@ -1,35 +1,45 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import UserNoticeCard from './UserNoticeCard';
 import { userNotices } from '../mockup_data';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import CSSModules from 'react-css-modules';
 import styles from './UserNotices.module.scss';
+import axios from 'axios';
+import setAuthToken from '../../utils/setAuthToken';
 
 class UserNotices extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notices: []
+      announcements: []
     }
   }
   componentDidMount() {
-    this.setState({
-      notices: userNotices
-    })
+    setAuthToken(localStorage.getItem('oauthToken'));
+    const userId = this.props.oauth.user.id;
+    axios.get(`http://localhost:8080/api/announcements/getByUserId?userId=${userId}`)
+      .then((res) => {
+        this.setState({
+          announcements: res.data
+        })
+      })
+
   }
   render() {
     let userNotices =
       <div>
         Nie ma ogłoszeń
       </div>;
-    if (this.state.notices !== null && this.state.notices !== undefined)
+    if (this.state.announcements !== null && this.state.announcements !== undefined)
       userNotices =
         <ul styleName="user-notices__list">
           {
-            this.state.notices.map((notice, key) =>
+            this.state.announcements.map((announcement, key) =>
               <li key={key} styleName="user-notices__list__item">
                 <UserNoticeCard
-                  noticeId={notice.id} noticeInfo={notice} match={this.props.match} />
+                  noticeId={announcement.id} noticeInfo={announcement} match={this.props.match} />
               </li>
             )
           }
@@ -44,4 +54,17 @@ class UserNotices extends Component {
 
 }
 
-export default withRouter(CSSModules(UserNotices, styles));
+UserNotices.propTypes = {
+
+  /** Required to check if user is currently log on*/
+  oauth: PropTypes.object.isRequired,
+}
+
+const mapStateToProps = (state) => ({
+  oauth: state.oauth,
+})
+
+export default connect(mapStateToProps)(
+  withRouter(CSSModules(UserNotices, styles))
+);
+

@@ -9,22 +9,32 @@ class MultipleSelectField extends Component {
     super(props);
     this.state = {
       selectedValue: '',
-      addedItems: []
+      addedItems: [],
+      options: []
     }
 
     this.addToList = this.addToList.bind(this);
     this.removeFromList = this.removeFromList = this.removeFromList.bind(this);
     this.changeSelectedValue = this.changeSelectedValue.bind(this);
-
   }
 
-  addToList(e) {
-    e.preventDefault();
+  componentDidMount() {
+    console.log(this.props.options);
+    this.setState({
+      options: this.props.options
+    })
+  }
+
+  addToList() {
     if (this.state.selectedValue !== '') {
       const items = this.state.addedItems;
       items.push(this.state.selectedValue);
+      this.props.onAddItem(this.state.selectedValue);
+      let options = this.state.options;
+      options = options.filter((name) => name !== this.state.selectedValue);
       this.setState({
-        addedItems: items
+        addedItems: items,
+        options: options,
       });
     }
     else {
@@ -37,15 +47,25 @@ class MultipleSelectField extends Component {
     const optionToRemove = e.currentTarget.parentNode.children[0].innerHTML;
     let items = this.state.addedItems;
     items = items.filter(el => el !== optionToRemove);
+    this.props.onRemoveItem(optionToRemove);
+
+    let options = this.state.options;
+
+    options.push(optionToRemove);
+
     this.setState({
-      addedItems: items
+      addedItems: items,
+      options: options
     });
   }
 
   changeSelectedValue(newVal) {
     this.setState({
       selectedValue: newVal
-    });
+    },
+      this.addToList
+    );
+
   }
 
   render() {
@@ -63,16 +83,25 @@ class MultipleSelectField extends Component {
         </ul>
     }
 
+    const listTitle = this.state.addedItems.length === 0 ? this.props.emptyMsg : this.props.listTitle;
+
     return (
       <div styleName="form__container">
         <div styleName="form__container__select-container">
           <div styleName="form__container__select-container__select">
-            <SelectField select="Wybierz zwierze" options={['Azor', 'Pimpek']} onChange={this.changeSelectedValue} />
+            <SelectField
+              select={this.props.select}
+              noOptions={this.props.noOptions}
+              options={this.state.options}
+              onChange={this.changeSelectedValue}
+              addToList={this.addToList}
+              isMultiple={true}
+            />
           </div>
-          <button styleName="form__container__select-container__button" onClick={this.addToList}>+</button>
+          {/* <button styleName="form__container__select-container__button" onClick={this.addToList}>+</button> */}
         </div>
         <div styleName="form__container__list-container">
-          Lista
+          {listTitle}
           {addedItems}
         </div>
       </div>

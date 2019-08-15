@@ -1,6 +1,7 @@
 @import "../common_styles/variables/colors.scss";
 
 .notice {
+  position: relative;
   margin-bottom: 70px;
   border-radius: 10px;
   border: 2px solid #E3E3E3;
@@ -22,15 +23,7 @@
       margin: 0;
     }
 
-    &__rating {
-      background: #333;
-      color: white;
-      border: 2px solid $yellow-dark;
-      font-weight: 700;
-      padding: 0.1rem 0.7rem;
-      margin-left: 10px;
-      border-radius: 20px;
-    }
+   
   }
 
   &__owner {
@@ -50,15 +43,7 @@
       color: black;
       font-weight: 700;
     }
-    &__rating {
-      color: black;
-      background: whitesmoke;
-      border: 2px solid $yellow-dark;
-      font-weight: 700;
-      padding: 0.1rem 0.7rem;
-      margin-left: 10px;
-      border-radius: 15px;
-    }
+    
   }
 }
 
@@ -66,11 +51,7 @@
   color: black;
   font-size: 0.8rem;
   position: relative;
-  &__image {
-    width: 300px;
-    height: 200px;
-    background: whitesmoke;
-  }
+ 
 
   &__selector {
     height: 1px;
@@ -121,39 +102,8 @@
       }
     }
   
-    &__keeping {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      &__title {
-        margin: 0;
-      }
   
-      &__date-from, &__date-to {
-        margin-top: 10px;
-
-        .date {
-          margin: 0;
-          font-weight: 700;
-        }
-        .time {
-          margin: 0;
-
-          &::first-letter {
-            text-transform: capitalize;
-          } 
-        }
-      }
-
-      &__timeline {
-        flex: 1;
-        margin: 0 20px;
-        width: 50px;
-      }
-    }
-  
-   
-  
+    
     &__reward {
       display: flex;  
       align-items: center;

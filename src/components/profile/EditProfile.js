@@ -55,10 +55,10 @@ class EditProfile extends Component {
 
   render() {
     return (
-      <div>
+      <div styleName="edit-profile">
         <ProfileNavbar match={this.props.match} />
         <h2>Edycja profilu</h2>
-        <form>
+        <form styleName="edit-profile__form">
           <ImageEdit
             imageSrc={this.state.avatar}
             imageAlt="Avatar"
@@ -112,7 +112,7 @@ class EditProfile extends Component {
             value={this.state.phoneNumber}
             onChange={this.onChangeValue}
           />
-          <input className="button button-primary" styleName="form__submit" type="submit" value="Edytuj" />
+          <input className="button button-primary" styleName="edit-profile__form__submit" type="submit" value="Edytuj" />
         </form>
 
       </div>

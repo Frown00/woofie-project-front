@@ -1,6 +1,18 @@
 @import "../common_styles/variables/colors.scss";
 
+.conversation {
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__send-message {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
 .message-list {
+  max-width: 500px;
+  margin: 0 auto;
   display: block;
   background: #f3f3f3;
   border: 1px solid #e3e3e3;

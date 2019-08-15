@@ -7,6 +7,11 @@ import Image from '../common/Image';
 import CSSModules from 'react-css-modules';
 import styles from './UserNoticeCard.module.scss';
 
+import defaultDog from '../../img/images/default_dog.png';
+import defaultCat from '../../img/images/default_cat.png';
+import defaultHamster from '../../img/images/default_hamster.png';
+import defaultPet from '../../img/images/default_pet.png';
+
 moment.locale('pl');
 
 function getPetNames(pets) {
@@ -22,9 +27,27 @@ class UserNoticeCard extends Component {
   }
 
   render() {
-    const { publishDate, endDate, keepingDateFrom, keepingDateTo, reward, status, city, street, pets } = this.props.noticeInfo;
+    const pets = this.props.noticeInfo["petsList"];
+    const publishDate = this.props.noticeInfo["issueDate"];
+    const endDate = this.props.noticeInfo["endDate"];
+    const status = this.props.noticeInfo["status"];
+    const keepingDateFrom = this.props.noticeInfo["dateFrom"];
+    const keepingDateTo = this.props.noticeInfo["dateTo"];
+    const applications = this.props.noticeInfo["applicationsId"];
+
     const petNames = getPetNames(pets);
-    const image = pets[0].image;
+    let image;
+    if (pets[0].image === undefined || pets[0].image === null) {
+      switch (pets[0].speciesName) {
+        case "Pies": image = defaultDog; break;
+        case "Kot": image = defaultCat; break;
+        case "Chomik": image = defaultHamster; break;
+        default: image = defaultPet;
+      }
+    }
+    else {
+      image = pets[0].image
+    }
     let statusName = '';
     if (status === "ACTIVE") {
       statusName = "Aktywny"
@@ -70,13 +93,20 @@ class UserNoticeCard extends Component {
           </p>
         </div>
       bottomButton =
-        <Link to={`${this.props.match.url}/${this.props.noticeInfo.id}/applications`}>
+        <Link
+          to={{
+            pathname: `${this.props.match.url}/${this.props.noticeInfo.id}/applications`,
+            state: {
+              noticeInfo: this.props.noticeInfo,
+              applications: this.props.noticeInfo.applications
+            }
+          }}
+        >
           <div styleName="user-notice__controls__applications">
-            Zgłoszenia <span styleName="user-notice__controls__applications__number">1</span>
+            Zgłoszenia <span styleName="user-notice__controls__applications__number">{applications.length}</span>
           </div>
         </Link>
     }
-    console.log(this.props.match.url);
     return (
       <div styleName="user-notice">
         <div styleName="user-notice__info">

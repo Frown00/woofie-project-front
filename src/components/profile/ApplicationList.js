@@ -23,10 +23,10 @@ class ApplicationList extends Component {
     let applicationList = <div>Nie masz żadnych zgłoszeń</div>
     if (this.state.applications !== null && this.state.applications !== undefined) {
       applicationList =
-        <ul>
+        <ul styleName="application-list">
           {
             this.state.applications.map(application =>
-              <li key={application.id}>
+              <li styleName="application-list__item" key={application.id}>
                 <ApplicationCard application={application} />
               </li>
             )
@@ -34,10 +34,10 @@ class ApplicationList extends Component {
         </ul>
     }
     return (
-      <div>
+      <div styleName="application-list-container">
         <SubNavbar links={this.props.subNavbarLinks} match={this.props.match} />
         <Profile match={this.props.match} />
-        <h2>Zgłoszenia</h2>
+        <h2>Moje zgłoszenia</h2>
         {applicationList}
       </div>
     )

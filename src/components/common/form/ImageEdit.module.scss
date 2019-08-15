@@ -2,7 +2,6 @@
 
 .form__container {
   max-width: 300px;
-  height: 100px;
   display: flex;
   align-items: center;
 
@@ -10,16 +9,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 100px;
+    border: 1px solid #eee;
     border-radius: 25px;
     overflow: hidden;
-    
+    background: white;
   }
-  &__image-container__image {
-    height: 150px;
 
-  }
 
   &__button-change {
     color: white;
